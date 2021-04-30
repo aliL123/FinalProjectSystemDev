@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to HOHO Korean BBQ!"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -18,7 +19,7 @@
         app:layout_constraintVertical_bias="0.27" />
 
     <Button
-        android:id="@+id/english"
+        android:id="@+id/englishbtn"
         android:layout_width="167dp"
         android:layout_height="74dp"
         android:text="English"
@@ -31,7 +32,7 @@
         app:layout_constraintVertical_bias="0.584" />
 
     <Button
-        android:id="@+id/french"
+        android:id="@+id/frenchbtn"
         android:layout_width="167dp"
         android:layout_height="74dp"
         android:text="French"
@@ -46,8 +47,8 @@
 
     <ImageButton
         android:id="@+id/setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="67dp"
+        android:layout_height="67dp"
         android:src="@drawable/setting"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
