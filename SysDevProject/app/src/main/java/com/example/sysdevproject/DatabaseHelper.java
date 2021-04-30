@@ -30,10 +30,10 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             "create table Employee ( employee_id Integer primary key autoincrement, name varchar(16));";
 
     private static final String CREATE_TABLE_CUSTOMER =
-            "create table Customer ( customer_id Integer primary key autoincrement, isOver18 Integer, payment_method varchar(16));";
+            "create table Customer ( customer_id Integer primary key autoincrement, isOver18 Integer);";
 
     private static final String CREATE_TABLE_ORDERS =
-            "create table Orders ( order_id Integer primary key autoincrement, customer_id Integer, total_price double, foreign key(customer_id) references Customer(customer_id));";
+            "create table Orders ( order_id Integer primary key autoincrement, customer_id Integer,  payment_method varchar(16), total_price double, foreign key(customer_id) references Customer(customer_id));";
 
     private static final String CREATE_TABLE_CART =
             "create table Cart ( order_id Integer, customer_id Integer, item_id Integer, quantity Integer, " +
