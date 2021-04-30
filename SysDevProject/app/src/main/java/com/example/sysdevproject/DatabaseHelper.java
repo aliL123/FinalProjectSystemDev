@@ -62,7 +62,44 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CART);
         onCreate(db);
     }
+    public boolean insertItem(String name, String description, Double price, int is_drink, int available) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("description", description);
+        contentValues.put("price", price);
+        contentValues.put("is_drink", is_drink);
+        contentValues.put("available", available);
+        long result = db.insert(TABLE_ITEMS, null, contentValues);
 
-  
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    public Item getItem(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String selectQuery = "SELECT  * FROM " + TABLE_ITEMS + " WHERE "
+                + "item_id" + " = " + "'" + id + "'";
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        Item item = new Item();
+        item.setItem_id(cursor.getInt(cursor.getColumnIndex("item_id")));
+        item.setName(cursor.getString(cursor.getColumnIndex("name")));
+        item.setDescription(cursor.getString(cursor.getColumnIndex("description")));
+        item.setPrice(cursor.getDouble(cursor.getColumnIndex("price")));
+        item.setIs_drink(cursor.getInt(cursor.getColumnIndex("is_drink")));
+        item.setAvailable(cursor.getInt(cursor.getColumnIndex("available")));
+        cursor.close();
+        return item;
+    }
+
+
 
 }
