@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SysDevProject">
-        <activity android:name=".ReceiptScreen"></activity>
+        <activity android:name=".LoginAdminActivity" />
+        <activity android:name=".ReceiptScreen" />
         <activity android:name=".CartScreen" />
         <activity android:name=".MainActivity">
             <intent-filter>

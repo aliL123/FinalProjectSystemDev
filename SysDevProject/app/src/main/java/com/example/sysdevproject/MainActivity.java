@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
         settingButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v)  {
-                Intent intent = new
+
+                startActivity(new Intent(MainActivity.this, LoginAdminActivity));
             }
         });
 
