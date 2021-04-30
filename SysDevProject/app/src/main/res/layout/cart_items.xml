@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/reduceItemToCartButton"
+        android:layout_width="83dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        app:layout_constraintEnd_toStartOf="@+id/deleteCartItemButton"
+        app:layout_constraintStart_toEndOf="@+id/itemCartQuantity"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cartItemName"
+        android:layout_width="261dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginLeft="97dp"
+        android:layout_marginTop="113dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:gravity="center"
+        android:hint="Text Item goes here Example"
+        android:text=""
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/addItemToCartButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/addItemToCartButton"
+        android:layout_width="83dp"
+        android:layout_height="73dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        app:layout_constraintBottom_toBottomOf="@+id/reduceItemToCartButton"
+        app:layout_constraintEnd_toStartOf="@+id/itemCartQuantity"
+        app:layout_constraintStart_toEndOf="@+id/cartItemName"
+        app:layout_constraintTop_toTopOf="@+id/reduceItemToCartButton" />
+
+    <TextView
+        android:id="@+id/itemCartQuantity"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/reduceItemToCartButton"
+        app:layout_constraintEnd_toStartOf="@+id/reduceItemToCartButton"
+        app:layout_constraintStart_toEndOf="@+id/addItemToCartButton"
+        app:layout_constraintTop_toTopOf="@+id/reduceItemToCartButton" />
+
+    <Button
+        android:id="@+id/deleteCartItemButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginRight="200dp"
+        android:background="@color/crimson"
+        android:backgroundTint="@color/crimson"
+        android:text="Delete"
+        android:textSize="20dp"
+        app:backgroundTint="@color/crimson"
+        app:layout_constraintBottom_toBottomOf="@+id/reduceItemToCartButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/reduceItemToCartButton"
+        app:layout_constraintTop_toTopOf="@+id/reduceItemToCartButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>
