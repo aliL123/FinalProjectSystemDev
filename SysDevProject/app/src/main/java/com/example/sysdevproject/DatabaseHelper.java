@@ -97,9 +97,24 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         item.setIs_drink(cursor.getInt(cursor.getColumnIndex("is_drink")));
         item.setAvailable(cursor.getInt(cursor.getColumnIndex("available")));
         cursor.close();
+        db.close();
         return item;
     }
 
+    public void makeItemUnavailable(int id)
+    {
+        String sql = "UPDATE " + TABLE_ITEMS + " SET available = 1  WHERE " + "item_id" + " = " + "'" + id + "'";
 
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.execSQL(sql);
+        db.close();
+    }
+    public void deleteItem(int id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql = "DELETE FROM " + TABLE_ITEMS+ "WHERE " + "item_id" + " = " + "'" + id + "'";
+        db.execSQL(sql);
+        db.close();
+    }
 
 }
