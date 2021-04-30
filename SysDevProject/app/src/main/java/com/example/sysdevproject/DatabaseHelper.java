@@ -78,6 +78,20 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             return true;
         }
     }
+
+    public boolean insertCustomer(String isOver18)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("isOver18", isOver18);
+        long result = db.insert(TABLE_CUSTOMER, null, contentValues);
+
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     public Item getItem(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
