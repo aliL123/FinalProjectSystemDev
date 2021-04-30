@@ -13,6 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
@@ -59,20 +61,17 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull MenuAdapter.ViewHolder holder, int position) {
-//        Glide.with(mContext)
-//                .asBitmap()
-//                .load(imagesOne.get(position))
-//                .into(holder.imageOne);
-//
-//        Glide.with(mContext)
-//                .asBitmap()
-//                .load(imagesTwo.get(position))
-//                .into(holder.imageTwo);
-//
-//        Glide.with(mContext)
-//                .asBitmap()
-//                .load(imagesThree.get(position))
-//                .into(holder.imageThree);
+        Picasso.get()
+                .load(imagesOne.get(position))
+                .into(holder.imageOne);
+
+        Picasso.get()
+                .load(imagesTwo.get(position))
+                .into(holder.imageTwo);
+
+        Picasso.get()
+                .load(imagesThree.get(position))
+                .into(holder.imageThree);
 
         holder.itemOneName.setText(namesOne.get(position));
         holder.itemOnePrice.setText(pricesOne.get(position));
