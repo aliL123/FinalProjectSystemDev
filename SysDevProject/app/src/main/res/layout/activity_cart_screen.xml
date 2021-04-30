@@ -4,6 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".CartScreen">
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="191dp"
+        android:layout_height="96dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginRight="142dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="316dp"
+        android:layout_marginRight="316dp"
+        android:layout_marginBottom="704dp"
+        android:gravity="center"
+        android:text="Here is a list of your items, you may adjust their quantity as well as delete a specific item of completely cancel your order."
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/cartCancelButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cartCancelButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Cancel Order"
+        android:textSize="20dp"
+        app:backgroundTint="#B12D2D"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cartCheckoutButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/cartCheckoutButton"
+        android:layout_width="640dp"
+        android:layout_height="96dp"
+        android:text="Finalize order and checkout"
+        android:textSize="20dp"
+        app:backgroundTint="#6EB528"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cartCancelButton"
+        app:layout_constraintEnd_toStartOf="@+id/cartCancelButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="1276dp"
+        android:layout_height="704dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cartCheckoutButton"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toEndOf="@+id/cartCheckoutButton"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
