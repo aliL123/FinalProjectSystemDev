@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuScreen">
+
+    <Button
+        android:id="@+id/menuDrinksButton"
+        android:layout_width="200dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="708dp"
+        android:text="Drinks"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menuBibimbapButton"
+        android:layout_width="200dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="528dp"
+        android:text="Bibimbap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menuPlateButton"
+        android:layout_width="200dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="352dp"
+        android:text="Plate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menu2SetButton"
+        android:layout_width="200dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="176dp"
+        android:text="2 set"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menuCancelOrderButton"
+        android:layout_width="530dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="732dp"
+        android:layout_marginLeft="732dp"
+        android:layout_marginTop="796dp"
+        android:text="Cancel"
+        android:textSize="20dp"
+        app:backgroundTint="#B12D2D"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menuCheckoutButton"
+        android:layout_width="530dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginLeft="204dp"
+        android:layout_marginTop="796dp"
+        android:text="Checkout"
+        android:textSize="20dp"
+        app:backgroundTint="#6EB528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menuComboButton"
+        android:layout_width="200dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:text="Combo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/menuScreenHeader"
+        android:layout_width="1074dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="7dp"
+        android:gravity="center"
+        android:text="2 set items"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/menuComboButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="112dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/menuScreenHeader"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hohoLogo" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView3"
+        android:layout_width="1060dp"
+        android:layout_height="647dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/menuDrinksButton"
+        app:layout_constraintTop_toBottomOf="@+id/menuScreenHeader" />
+</androidx.constraintlayout.widget.ConstraintLayout>

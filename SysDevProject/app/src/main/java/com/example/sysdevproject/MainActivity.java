@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         settingButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v)  {
 
-                startActivity(new Intent(MainActivity.this, LoginAdminActivity));
+                startActivity(new Intent(MainActivity.this, LoginAdminActivity.class));
             }
         });
 
