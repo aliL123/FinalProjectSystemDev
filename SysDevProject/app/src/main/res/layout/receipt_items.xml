@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/receiptItemImage"
+        android:layout_width="272dp"
+        android:layout_height="221dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hohoLogo" />
+
+    <TextView
+        android:id="@+id/receiptItemName"
+        android:layout_width="598dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="Item Name"
+        android:textSize="40dp"
+        app:layout_constraintStart_toEndOf="@+id/receiptItemImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/receiptItemPrice"
+        android:layout_width="243dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="Item Price"
+        android:textSize="40dp"
+        app:layout_constraintStart_toEndOf="@+id/receiptItemName"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
