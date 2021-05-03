@@ -103,9 +103,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView3"
-        android:layout_width="1075dp"
-        android:layout_height="611dp"
+        android:id="@+id/menuRecyclerView"
+        android:layout_width="1047dp"
+        android:layout_height="547dp"
         app:layout_constraintStart_toEndOf="@+id/menuDrinksButton"
         app:layout_constraintTop_toBottomOf="@+id/menuScreenHeader" />
 
