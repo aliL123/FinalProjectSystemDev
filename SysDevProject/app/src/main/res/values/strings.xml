@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SysDevProject</string>
+    <string name="title_combo">Combo</string>
+    <string name="title_twos_set">2 Set</string>
+    <string name="cancel">Cancel</string>
+    <string name="checkout">Checkout</string>
+    <string name="title_plate">Plate</string>
+    <string name="title_drink">Drinks</string>
 </resources>
