@@ -41,7 +41,6 @@
         android:layout_marginTop="152dp"
         android:background="@color/purple_500"
         android:text="@string/twos_set_title"
-        android:text="2 set"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
