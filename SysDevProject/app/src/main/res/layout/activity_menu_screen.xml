@@ -104,9 +104,9 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
+        android:src="@drawable/hohologo"
         app:layout_constraintStart_toStartOf="@+id/menuScreenHeader"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/hohologo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/menuRecyclerView"
