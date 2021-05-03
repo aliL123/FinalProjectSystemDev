@@ -3,13 +3,18 @@ package com.example.sysdevproject;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     Button frButton, enButton;
@@ -81,6 +86,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    public  void setLocal(Activity activity, String langCode) {
+        Locale locale = new Locale(langCode);
+        locale.setDefault(locale);
+        Resources resources = activity.getResources();
+        Configuration configuration = resources.getConfiguration();
+        configuration.setLocale(locale);
+        resources.updateConfiguration(configuration,resources.getDisplayMetrics());
 
     }
 }
