@@ -39,16 +39,16 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                        //Intent intent = new Intent(MainActivity.this, Menu.this);
-                        //startActivity(intent);
+//                        finish();
+                        Intent intent = new Intent(MainActivity.this, MenuScreen.class);
+                        startActivity(intent);
                     }
                 }).setNegativeButton("Non", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         finish();
-                        //Intent intent = new Intent(MainActivity.this, Menu.this);
-                        //startActivity(intent);
+                        Intent intent = new Intent(MainActivity.this, MenuScreen.class);
+                        startActivity(intent);
                     }
                 });
                 AlertDialog alert = builder.create();
