@@ -13,7 +13,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="708dp"
-        android:text="@string/title_drink"
+        android:text="@string/drink_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,7 +35,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="352dp"
-        android:text="@string/title_plate"
+        android:text="@string/plate_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +46,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="176dp"
-        android:text="@string/title_twos_set"
+        android:text="@string/twos_set_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,7 +82,7 @@
         android:layout_height="179dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
-        android:text="@string/title_combo"
+        android:text="@string/combo_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
