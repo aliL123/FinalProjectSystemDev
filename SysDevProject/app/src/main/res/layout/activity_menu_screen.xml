@@ -109,7 +109,7 @@
         app:srcCompat="@drawable/hohologo" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView3"
+        android:id="@+id/menuRecyclerView"
         android:layout_width="1060dp"
         android:layout_height="647dp"
         android:layout_marginStart="12dp"

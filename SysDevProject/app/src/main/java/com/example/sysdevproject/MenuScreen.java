@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -35,12 +38,22 @@ public class MenuScreen extends AppCompatActivity {
     ArrayList<Integer> itemThreeIsDrink = new ArrayList<>();
     ArrayList<Integer> itemThreeIsAvailable = new ArrayList<>();
 
+    Button combo, twoSet, plate, bibimbap, drinks;
+    TextView menuScreenTitle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_screen);
 
         db = new DatabaseHelper(this);
+
+        combo = findViewById(R.id.menuComboButton);
+        twoSet = findViewById(R.id.menu2SetButton);
+        plate = findViewById(R.id.menuPlateButton);
+        bibimbap = findViewById(R.id.menuBibimbapButton);
+        drinks = findViewById(R.id.menuDrinksButton);
+        menuScreenTitle = findViewById(R.id.menuScreenHeader);
 
         Cursor allItems = db.getAllItems();
 
@@ -65,5 +78,36 @@ public class MenuScreen extends AppCompatActivity {
         recycleView.setAdapter(adapter);
         recycleView.setLayoutManager(new LinearLayoutManager(this));
 
+
+        combo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                menuScreenTitle.setText("Combo");
+            }
+        });
+        twoSet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                menuScreenTitle.setText(" 2 set items");
+            }
+        });
+        plate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                menuScreenTitle.setText("Plate");
+            }
+        });
+        bibimbap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                menuScreenTitle.setText("Bibimbap");
+            }
+        });
+        drinks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                menuScreenTitle.setText("Drinks");
+            }
+        });
     }
 }
