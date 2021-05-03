@@ -1,9 +1,21 @@
 <resources>
     <string name="app_name">SysDevProject</string>
-    <string name="title_combo">Combo</string>
-    <string name="title_twos_set">2 Set</string>
+    <string name="combo_title">Combo</string>
+    <string name="twos_set_title">2 Set</string>
     <string name="cancel">Cancel</string>
     <string name="checkout">Checkout</string>
-    <string name="title_plate">Plate</string>
-    <string name="title_drink">Drinks</string>
+    <string name="plate_title">Plate</string>
+    <string name="drink_title">Drinks</string>
+    <string name="cart_title">Here is a list of your items, you may adjust their quantity as
+        well as delete a specific item of completely cancel your order.</string>
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
+<!--    <string name=""></string>-->
 </resources>
