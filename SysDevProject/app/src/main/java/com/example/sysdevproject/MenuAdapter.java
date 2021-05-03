@@ -21,20 +21,20 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
 
     ArrayList<String> imagesOne = new ArrayList<>();
     ArrayList<String> namesOne = new ArrayList<>();
-    ArrayList<String> pricesOne = new ArrayList<>();
+    ArrayList<Double> pricesOne = new ArrayList<>();
 
     ArrayList<String> imagesTwo = new ArrayList<>();
     ArrayList<String> namesTwo = new ArrayList<>();
-    ArrayList<String> pricesTwo = new ArrayList<>();
+    ArrayList<Double> pricesTwo = new ArrayList<>();
 
     ArrayList<String> imagesThree = new ArrayList<>();
     ArrayList<String> namesThree = new ArrayList<>();
-    ArrayList<String> pricesThree = new ArrayList<>();
+    ArrayList<Double> pricesThree = new ArrayList<>();
     Context mContext;
 
-    public MenuAdapter(ArrayList<String> imageOne, ArrayList<String> nameOne, ArrayList<String> priceOne,
-                       ArrayList<String> imageTwo, ArrayList<String> nameTwo, ArrayList<String> priceTwo,
-                       ArrayList<String> imagesThree, ArrayList<String> namesThree, ArrayList<String> pricesThree,
+    public MenuAdapter(ArrayList<String> imageOne, ArrayList<String> nameOne, ArrayList<Double> priceOne,
+                       ArrayList<String> imageTwo, ArrayList<String> nameTwo, ArrayList<Double> priceTwo,
+                       ArrayList<String> imagesThree, ArrayList<String> namesThree, ArrayList<Double> pricesThree,
                        Context mContext) {
 
         this.imagesOne = imageOne;
@@ -74,13 +74,13 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
                 .into(holder.imageThree);
 
         holder.itemOneName.setText(namesOne.get(position));
-        holder.itemOnePrice.setText(pricesOne.get(position));
+        holder.itemOnePrice.setText(String.valueOf(pricesOne.get(position)));
 
         holder.itemTwoName.setText(namesTwo.get(position));
-        holder.itemTwoPrice.setText(pricesTwo.get(position));
+        holder.itemTwoPrice.setText(String.valueOf(pricesTwo.get(position)));
 
         holder.itemThreeName.setText(namesThree.get(position));
-        holder.itemThreePrice.setText(pricesTwo.get(position));
+        holder.itemThreePrice.setText(String.valueOf(pricesTwo.get(position)));
     }
 
     @Override

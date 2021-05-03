@@ -115,6 +115,12 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return item;
     }
 
+    public Cursor getAllItems() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE_ITEMS, null);
+        return result;
+    }
+
     public void makeItemUnavailable(int id)
     {
         String sql = "UPDATE " + TABLE_ITEMS + " SET available = 1  WHERE " + "item_id" + " = " + "'" + id + "'";
