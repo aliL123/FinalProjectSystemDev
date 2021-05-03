@@ -8,19 +8,10 @@
 
     <Button
         android:id="@+id/menuDrinksButton"
-<<<<<<< Updated upstream
-        android:layout_width="200dp"
-        android:layout_height="179dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="708dp"
-        android:text="@string/title_drink"
-=======
         android:layout_width="215dp"
         android:layout_height="153dp"
         android:layout_marginTop="604dp"
         android:text="Drinks"
->>>>>>> Stashed changes
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,37 +26,19 @@
 
     <Button
         android:id="@+id/menuPlateButton"
-<<<<<<< Updated upstream
-        android:layout_width="200dp"
-        android:layout_height="179dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="352dp"
-        android:text="@string/title_plate"
-=======
         android:layout_width="215dp"
         android:layout_height="153dp"
         android:layout_marginTop="304dp"
         android:text="Plate"
->>>>>>> Stashed changes
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/menu2SetButton"
-<<<<<<< Updated upstream
-        android:layout_width="200dp"
-        android:layout_height="179dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="176dp"
-        android:text="@string/title_twos_set"
-=======
         android:layout_width="215dp"
         android:layout_height="153dp"
         android:layout_marginTop="152dp"
         android:text="2 set"
->>>>>>> Stashed changes
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,17 +46,10 @@
         android:id="@+id/menuCancelOrderButton"
         android:layout_width="530dp"
         android:layout_height="90dp"
-<<<<<<< Updated upstream
-        android:layout_marginStart="732dp"
-        android:layout_marginLeft="732dp"
-        android:layout_marginTop="796dp"
-        android:text="@string/cancel"
-=======
         android:layout_marginStart="748dp"
         android:layout_marginLeft="748dp"
         android:layout_marginTop="672dp"
         android:text="Cancel"
->>>>>>> Stashed changes
         android:textSize="20dp"
         app:backgroundTint="#B12D2D"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,17 +59,10 @@
         android:id="@+id/menuCheckoutButton"
         android:layout_width="530dp"
         android:layout_height="90dp"
-<<<<<<< Updated upstream
-        android:layout_marginStart="204dp"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="796dp"
-        android:text="@string/checkout"
-=======
         android:layout_marginStart="216dp"
         android:layout_marginLeft="216dp"
         android:layout_marginTop="672dp"
         android:text="Checkout"
->>>>>>> Stashed changes
         android:textSize="20dp"
         app:backgroundTint="#6EB528"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,17 +70,9 @@
 
     <Button
         android:id="@+id/menuComboButton"
-<<<<<<< Updated upstream
-        android:layout_width="200dp"
-        android:layout_height="179dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:text="@string/title_combo"
-=======
         android:layout_width="215dp"
         android:layout_height="153dp"
         android:text="Combo"
->>>>>>> Stashed changes
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -145,7 +96,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@+id/menuScreenHeader"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hohologo" />
+        android:src="@drawable/hohologo" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView3"
