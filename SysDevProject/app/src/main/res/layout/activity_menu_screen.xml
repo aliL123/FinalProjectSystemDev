@@ -106,7 +106,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@+id/menuScreenHeader"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hohoLogo" />
+        app:srcCompat="@drawable/hohologo" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView3"

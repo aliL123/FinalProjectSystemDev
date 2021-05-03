@@ -60,7 +60,7 @@
     <ImageView
         android:layout_width="112dp"
         android:layout_height="95dp"
-        android:src="@drawable/hohoLogo"
+        android:src="@drawable/hohologo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.017"
