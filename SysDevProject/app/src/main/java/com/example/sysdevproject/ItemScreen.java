@@ -32,13 +32,13 @@ public class ItemScreen extends AppCompatActivity {
 
         Intent intent = getIntent();
         String image = intent.getStringExtra("image");
-        double price = Double.parseDouble(intent.getStringExtra("price"));
+        double price = intent.getDoubleExtra("price", 0);
 
         Picasso.get()
                 .load(image)
                 .into(itemImage);
 
-        itemPrice.setText(price + "");
+        itemPrice.setText("$"+price);
 
         addCart = findViewById(R.id.itemAddCartButton);
         addCart.setOnClickListener(new View.OnClickListener() {

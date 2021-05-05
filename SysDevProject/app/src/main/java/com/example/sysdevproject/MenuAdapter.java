@@ -74,13 +74,13 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
                 .into(holder.imageThree);
 
         holder.itemOneName.setText(namesOne.get(position));
-        holder.itemOnePrice.setText(String.valueOf(pricesOne.get(position)));
+        holder.itemOnePrice.setText("$"+pricesOne.get(position));
 
         holder.itemTwoName.setText(namesTwo.get(position));
-        holder.itemTwoPrice.setText(String.valueOf(pricesTwo.get(position)));
+        holder.itemTwoPrice.setText("$"+pricesTwo.get(position));
 
         holder.itemThreeName.setText(namesThree.get(position));
-        holder.itemThreePrice.setText(String.valueOf(pricesTwo.get(position)));
+        holder.itemThreePrice.setText("$"+pricesTwo.get(position));
     }
 
     @Override
@@ -119,7 +119,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, ItemScreen.class);
                     intent.putExtra("image", imagesOne.get(getAdapterPosition()));
-                    intent.putExtra("price", itemOnePrice.getText().toString());
+                    intent.putExtra("price", pricesOne.get(getAdapterPosition()));
                     v.getContext().startActivity(intent);
                 }
             });
@@ -129,7 +129,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, ItemScreen.class);
                     intent.putExtra("image", imagesTwo.get(getAdapterPosition()));
-                    intent.putExtra("price", itemTwoPrice.getText().toString());
+                    intent.putExtra("price", pricesTwo.get(getAdapterPosition()));
                     v.getContext().startActivity(intent);
                 }
             });
@@ -139,7 +139,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, ItemScreen.class);
                     intent.putExtra("image", imagesThree.get(getAdapterPosition()));
-                    intent.putExtra("price", itemThreePrice.getText().toString());
+                    intent.putExtra("price", pricesThree.get(getAdapterPosition()));
                     v.getContext().startActivity(intent);
                 }
             });

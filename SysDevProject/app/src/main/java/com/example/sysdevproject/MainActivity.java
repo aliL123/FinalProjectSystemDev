@@ -95,76 +95,41 @@ public class MainActivity extends AppCompatActivity {
 
         if (allItems.getCount() == 0) {
 
-//        db.insertItem("LA Galbi", "", 38.99, 0, 1, "2set");
-//        db.insertItem("Bulgogi", "", 38.99, 0, 1, "2set");
-//        db.insertItem("Pork BBQ", "", 34.99, 0, 1, "2set");
-//        db.insertItem("Pork Belly", "", 34.99, 0, 1, "2set");
-//        db.insertItem("Spicy Chicken", "", 37.99, 0, 1, "2set");
-//        db.insertItem("Spicy Pork", "", 34.99, 0, 1, "2set");
-//
-//        db.insertItem("Bulgogi Doshirak", "", 18.99, 0, 1, "combo");
-//        db.insertItem("LA Galbi Doshirak", "", 18.99, 0, 1, "combo");
-//        db.insertItem("Spicy Pork Doshirak", "", 16.99, 0, 1, "combo");
-//        db.insertItem("Pork BBQ Doshirak", "", 16.99, 0, 1, "combo");
-//        db.insertItem("Spicy Chicken Doshirak", "", 17.99, 0, 1, "combo");
-//
-//        db.insertItem("Fried Tofu Bibimbap", "", 12.99, 0, 1, "bibimbap");
-//        db.insertItem("Bulgogi Bibimbap", "", 14.99, 0, 1, "bibimbap");
-//        db.insertItem("Chicken Teriyaki Bibimbap", "", 13.99, 0, 1, "bibimbap");
-//
-//        db.insertItem("Japchae", "", 12.99, 0, 1, "bibimbap");
-//        db.insertItem("Jjajangmyun", "", 12.99, 0, 1, "bibimbap");
-//        db.insertItem("Seafood Teriyaki Stir-fried Noodles", "", 13.99, 0, 1, "bibimbap");
-//        db.insertItem("Korean spicy noodles soup", "", 7.99, 0, 1, "bibimbap");
-//
-//        db.insertItem("Spicy soft tofu stew with seafood", "", 13.99, 0, 1, "bibimbap");
-//        db.insertItem("Ddukbaegi Bulgogi", "", 14.99, 0, 1, "bibimbap");
-//        db.insertItem("Soybean paste stew", "", 12.99, 0, 1, "bibimbap");
-//
-//        db.insertItem("Tangsuyuk", "", 15.99, 0, 1, "plate");
-//        db.insertItem("Tteok-bokki", "", 12.99, 0, 1, "plate");
-//        db.insertItem("Kimchi Fried Rice with Tuna", "", 12.99, 0, 1, "plate");
-//        db.insertItem("Seafood Pancake", "", 14.99, 0, 1, "plate");
-//        db.insertItem("Tonkatsu Doshirak", "", 15.99, 0, 1, "plate");
-//        db.insertItem("Yobuchobap", "", 6.99, 0, 1, "plate");
-//        db.insertItem("Jokbal (Pigs' Feet)", "", 29.99, 0, 1, "plate");
-//        db.insertItem("Steamed rice", "", 2.99, 0, 1, "plate");
-//        db.insertItem("Lettuce", "", 2.99, 0, 1, "plate");
-//        db.insertItem("Pickled Radish", "", 2.99, 0, 1, "plate");
-//        db.insertItem("Seasoned Green Onions", "", 2.99, 0, 1, "plate");
-//        db.insertItem("Handmade Kimchi", "", 4.99, 0, 1, "plate");
-//
-//        db.insertItem("Deep Fried Vegetable Dumplings", "", 6.99, 0, 1, "plate");
-//        db.insertItem("Deep Fried Pork Dumplings", "", 8.99, 0, 1, "plate");
-//        db.insertItem("Edamame", "", 4.99, 0, 1, "plate");
-//        db.insertItem("Takoyaki", "", 4.99, 0, 1, "plate");
-//        db.insertItem("Miso Soup", "", 2.99, 0, 1, "plate");
-//        db.insertItem("French Fries", "", 5.99, 0, 1, "plate");
-//        db.insertItem("Vegetable Spring Roll", "", 4.99, 0, 1, "plate");
-//        db.insertItem("Shrimp Tempura", "", 6.99, 0, 1, "plate");
-//        db.insertItem("Tteok kkochi", "", 4.50, 0, 1, "plate");
-//
-//        db.insertItem("Crispy Fried Chicken Drumsticks", "", 5.99, 0, 1, "plate");
-//        db.insertItem("Crispy Fried Chicken Wings and French Fries", "", 12.99, 0, 1, "plate");
-//
-//        db.insertItem("Milkis", "", 3.50, 1, 1, "drinks");
-//        db.insertItem("Sikhye (Rice punch)", "", 3.00, 1, 1, "drinks");
-//        db.insertItem("Bong Bong (Grape juice)", "", 3.00, 1, 1, "drinks");
-//        db.insertItem("Aloe drink", "", 3.50, 1, 1, "drinks");
-//
-//        db.insertItem("Coke", "", 2.50, 1, 1, "drinks");
-//        db.insertItem("Diet Coke", "", 2.50, 1, 1, "drinks");
-//        db.insertItem("7up", "", 2.50, 1, 1, "drinks");
-//        db.insertItem("Crush orange", "", 2.50, 1, 1, "drinks");
-//        db.insertItem("Canada Dry", "", 2.50, 1, 1, "drinks");
-//
-//        db.insertItem("Sleeman Beer", "", 3.99, 1, 1, "drinks");
-//        db.insertItem("Sapporo Beer", "", 4.99, 1, 1, "drinks");
-//        db.insertItem("Tsingtao bBeer", "", 4.99, 1, 1, "drinks");
-//        db.insertItem("Original Soju", "", 14.99, 1, 1, "drinks");
-//        db.insertItem("Fruit Soju", "", 14.99, 1, 1, "drinks");
-//        db.insertItem("Makguli (Rice wine)", "", 14.99, 1, 1, "drinks");
-//        db.insertItem("Maehwasu (Plume wine)", "", 12.99, 1, 1, "drinks");
+            db.insertItem("LA Galbi", "", 38.99, 0, 1, "2set");
+            db.insertItem("Bulgogi", "", 38.99, 0, 1, "2set");
+            db.insertItem("Pork BBQ", "", 34.99, 0, 1, "2set");
+            db.insertItem("Pork Belly", "", 34.99, 0, 1, "2set");
+            db.insertItem("Spicy Chicken", "", 37.99, 0, 1, "2set");
+            db.insertItem("Spicy Pork", "", 34.99, 0, 1, "2set");
+
+            db.insertItem("Bulgogi Doshirak", "", 18.99, 0, 1, "combo");
+            db.insertItem("LA Galbi Doshirak", "", 18.99, 0, 1, "combo");
+            db.insertItem("Spicy Pork Doshirak", "", 16.99, 0, 1, "combo");
+            db.insertItem("Pork BBQ Doshirak", "", 16.99, 0, 1, "combo");
+            db.insertItem("Spicy Chicken Doshirak", "", 17.99, 0, 1, "combo");
+
+            db.insertItem("Fried Tofu Bibimbap", "", 12.99, 0, 1, "bibimbap");
+            db.insertItem("Chicken Teriyaki Bibimbap", "", 13.99, 0, 1, "bibimbap");
+            db.insertItem("Seafood Teriyaki Stir-fried Noodles", "", 13.99, 0, 1, "bibimbap");
+            db.insertItem("Korean spicy noodles soup", "", 7.99, 0, 1, "bibimbap");
+            db.insertItem("Spicy soft tofu stew with seafood", "", 13.99, 0, 1, "bibimbap");
+            db.insertItem("Ddukbaegi Bulgogi", "", 14.99, 0, 1, "bibimbap");
+            db.insertItem("Soybean paste stew", "", 12.99, 0, 1, "bibimbap");
+
+            db.insertItem("Tangsuyuk", "", 15.99, 0, 1, "plate");
+            db.insertItem("Tteok-bokki", "", 12.99, 0, 1, "plate");
+            db.insertItem("Kimchi Fried Rice with Tuna", "", 12.99, 0, 1, "plate");
+            db.insertItem("Seafood Pancake", "", 14.99, 0, 1, "plate");
+            db.insertItem("Jokbal (Pigs' Feet)", "", 29.99, 0, 1, "plate");
+            db.insertItem("Handmade Kimchi", "", 4.99, 0, 1, "plate");
+
+            db.insertItem("Coke", "", 2.50, 1, 1, "drinks");
+            db.insertItem("Diet Coke", "", 2.50, 1, 1, "drinks");
+            db.insertItem("7up", "", 2.50, 1, 1, "drinks");
+            db.insertItem("Crush orange", "", 2.50, 1, 1, "drinks");
+            db.insertItem("Sleeman Beer", "", 3.99, 1, 1, "drinks");
+            db.insertItem("Sapporo Beer", "", 4.99, 1, 1, "drinks");
+            db.insertItem("Tsingtao bBeer", "", 4.99, 1, 1, "drinks");
         }
 
     }
