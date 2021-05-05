@@ -39,7 +39,7 @@ public class AdminHomeActivity extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //delete item from database
+                startActivity(new Intent(AdminHomeActivity.this, AdminDeleteItemActivity.class));
             }
         });
 
