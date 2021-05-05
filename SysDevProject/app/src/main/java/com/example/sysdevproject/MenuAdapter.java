@@ -89,7 +89,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView imageOne, imageTwo, imageThree;
+        ImageButton imageOne, imageTwo, imageThree;
         TextView itemOneName, itemOnePrice;
         TextView itemTwoName, itemTwoPrice;
         TextView itemThreeName, itemThreePrice;
@@ -112,6 +112,37 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
             itemThreeName = itemView.findViewById(R.id.itemThreeName);
             itemThreePrice = itemView.findViewById(R.id.itemThreePrice);
             parentLayout = itemView.findViewById(R.id.parent);
+
+
+            imageOne.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, ItemScreen.class);
+                    intent.putExtra("image", imagesOne.get(getAdapterPosition()));
+                    intent.putExtra("price", itemOnePrice.getText().toString());
+                    v.getContext().startActivity(intent);
+                }
+            });
+
+            imageTwo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, ItemScreen.class);
+                    intent.putExtra("image", imagesTwo.get(getAdapterPosition()));
+                    intent.putExtra("price", itemTwoPrice.getText().toString());
+                    v.getContext().startActivity(intent);
+                }
+            });
+
+            imageThree.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, ItemScreen.class);
+                    intent.putExtra("image", imagesThree.get(getAdapterPosition()));
+                    intent.putExtra("price", itemThreePrice.getText().toString());
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }
