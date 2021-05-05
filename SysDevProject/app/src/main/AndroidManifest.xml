@@ -12,7 +12,11 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.SysDevProject">
+<<<<<<< Updated upstream
         <activity android:name=".AdminDeleteItemActivity"></activity>
+=======
+        <activity android:name=".AdminAddItemActivity"></activity>
+>>>>>>> Stashed changes
         <activity android:name=".MenuScreen" />
         <activity android:name=".LoginAdminActivity" />
         <activity android:name=".ReceiptScreen" />

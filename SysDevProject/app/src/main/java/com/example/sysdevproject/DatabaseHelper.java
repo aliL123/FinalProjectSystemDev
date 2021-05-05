@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     private static final String CREATE_TABLE_ITEMS =
             "create table Item ( item_id Integer primary key autoincrement, name varchar(64), description text, " +
-                    "price double, is_drink Integer, available Integer);";
+                    "price double, is_drink Integer, available Integer, category varchar(64));";
 
     private static final String CREATE_TABLE_EMPLOYEE =
             "create table Employee ( employee_id Integer primary key autoincrement, name varchar(16));";
@@ -62,7 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CART);
         onCreate(db);
     }
-    public boolean insertItem(String name, String description, Double price, int is_drink, int available) {
+    public boolean insertItem(String name, String description, Double price, int is_drink, int available, String category) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);
@@ -70,6 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         contentValues.put("price", price);
         contentValues.put("is_drink", is_drink);
         contentValues.put("available", available);
+        contentValues.put("category", category);
         long result = db.insert(TABLE_ITEMS, null, contentValues);
 
         if (result == -1) {
