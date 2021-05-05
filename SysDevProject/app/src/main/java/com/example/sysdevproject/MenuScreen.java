@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -39,6 +40,7 @@ public class MenuScreen extends AppCompatActivity {
     ArrayList<Integer> itemThreeIsAvailable = new ArrayList<>();
 
     Button combo, twoSet, plate, bibimbap, drinks;
+    Button viewCart, cancel;
     TextView menuScreenTitle;
 
     @Override
@@ -54,6 +56,9 @@ public class MenuScreen extends AppCompatActivity {
         bibimbap = findViewById(R.id.menuBibimbapButton);
         drinks = findViewById(R.id.menuDrinksButton);
         menuScreenTitle = findViewById(R.id.menuScreenHeader);
+
+        viewCart = findViewById(R.id.menuCheckoutButton);
+        cancel = findViewById(R.id.menuCancelOrderButton);
 
         Cursor allItems = db.getAllItems();
 
@@ -120,6 +125,15 @@ public class MenuScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 menuScreenTitle.setText("Drinks");
+            }
+        });
+
+
+        viewCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuScreen.this, CartScreen.class);
+                startActivity(intent);
             }
         });
     }

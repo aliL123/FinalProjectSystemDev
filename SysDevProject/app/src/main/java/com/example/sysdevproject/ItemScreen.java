@@ -44,7 +44,7 @@ public class ItemScreen extends AppCompatActivity {
         addCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(ItemScreen.this, MenuScreen.class));
             }
         });
 
