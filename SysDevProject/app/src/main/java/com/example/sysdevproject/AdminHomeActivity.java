@@ -32,7 +32,7 @@ public class AdminHomeActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //add an new item to database
+                startActivity(new Intent(AdminHomeActivity.this, AdminAddItemActivity.class));
             }
         });
 
