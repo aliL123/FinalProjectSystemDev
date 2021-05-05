@@ -18,4 +18,12 @@
     <!--    <string name=""></string>-->
     <!--    <string name=""></string>-->
     <!--    <string name=""></string>-->
+
+    <string-array name="category">
+        <item>Combo</item>
+        <item>2 Set</item>
+        <item>Bibimap</item>
+        <item>Plate</item>
+        <item>Drinks</item>
+    </string-array>
 </resources>

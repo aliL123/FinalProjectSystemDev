@@ -96,6 +96,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewItemName" />
 
+    <TextView
+        android:id="@+id/textViewCategory"
+        android:layout_width="129dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Category:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPrice" />
+
+    <TextView
+        android:id="@+id/textViewAvailable"
+        android:layout_width="129dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="72dp"
+        android:gravity="center"
+        android:text="Available:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPrice" />
+
+    <TextView
+        android:id="@+id/textViewDrink"
+        android:layout_width="129dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="128dp"
+        android:gravity="center"
+        android:text="Drink:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPrice" />
+
     <EditText
         android:id="@+id/editTextPrice"
         android:layout_width="150dp"
@@ -108,12 +150,13 @@
         app:layout_constraintStart_toEndOf="@+id/textViewItemName"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
+
     <TextView
         android:layout_width="129dp"
         android:layout_height="44dp"
         android:layout_marginStart="112dp"
         android:layout_marginLeft="112dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="256dp"
         android:gravity="center"
         android:text="Description:"
         android:textColor="@color/black"
@@ -121,16 +164,93 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewItemName" />
 
-
     <EditText
         android:id="@+id/editTextDescription"
         android:layout_width="493dp"
         android:layout_height="339dp"
-        android:layout_marginTop="292dp"
-        android:inputType="text|textMultiLine"
+        android:layout_marginTop="384dp"
         android:background="@drawable/description_border"
+        android:inputType="text|textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textViewItemName"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <Button
+        android:id="@+id/itemSaveButton"
+        android:layout_width="185dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="36dp"
+        android:text="Save Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="185dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewCategory"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/textViewAvailable"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCategory">
+
+        <RadioButton
+            android:id="@+id/radio_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Yes"
+            android:textColor="@color/black"
+            android:textSize="23dp" />
+
+        <RadioButton
+            android:id="@+id/radio_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textColor="@color/black"
+            android:textSize="23dp" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupDrink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/textViewDrink"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" >
+
+        <RadioButton
+            android:id="@+id/radio_drink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Drink"
+            android:textColor="@color/black"
+            android:textSize="23dp" />
+
+        <RadioButton
+            android:id="@+id/radio_drink2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not a Drink"
+            android:textColor="@color/black"
+            android:textSize="23dp" />
+    </RadioGroup>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
