@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/itemOneImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="92dp"
         android:layout_marginLeft="92dp"
         android:layout_marginTop="4dp"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@drawable/hohologo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,14 +43,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/itemTwoImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="444dp"
         android:layout_marginLeft="444dp"
         android:layout_marginTop="4dp"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@drawable/hohologo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,14 +67,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/itemThreeImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="764dp"
         android:layout_marginLeft="764dp"
         android:layout_marginTop="4dp"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@drawable/hohologo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

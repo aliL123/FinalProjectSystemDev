@@ -12,6 +12,7 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.SysDevProject">
+        <activity android:name=".ItemScreen" />
         <activity android:name=".AdminDeleteItemActivity"></activity>
         <activity android:name=".MenuScreen" />
         <activity android:name=".LoginAdminActivity" />
