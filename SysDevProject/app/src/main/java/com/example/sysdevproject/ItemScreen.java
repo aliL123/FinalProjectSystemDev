@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class ItemScreen extends AppCompatActivity {
     TextView itemPrice, itemDescription;
 
     Button addCart;
+    ImageButton backToCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +38,21 @@ public class ItemScreen extends AppCompatActivity {
                 .load(image)
                 .into(itemImage);
 
-        itemPrice.setText(price+"");
+        itemPrice.setText(price + "");
 
         addCart = findViewById(R.id.itemAddCartButton);
         addCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+            }
+        });
+
+        backToCart = findViewById(R.id.itemScreenBackImageButton);
+        backToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ItemScreen.this, MenuScreen.class));
             }
         });
     }
