@@ -57,7 +57,7 @@ public class MenuScreen extends AppCompatActivity {
 
         Cursor allItems = db.getAllItems();
 
-        itemOneImage.add("https://www.seriouseats.com/2019/07/20190619-korean-bbq-kalbi-beef-short-ribs-vicky-wasik-21-1500x1125.jpg");
+        itemOneImage.add("https://www.theflavorbender.com/wp-content/uploads/2018/04/Galbi-Korean-BBQ-Short-Ribs-Feat2.jpg");
         itemOneName.add("LA Galbi");
         itemOnePrice.add(38.99);
 
@@ -67,6 +67,19 @@ public class MenuScreen extends AppCompatActivity {
 
         itemThreeImage.add("https://i.pinimg.com/originals/da/88/12/da8812565e031c79c33693115018b040.jpg");
         itemThreeName.add("Pork BBQ");
+        itemThreePrice.add(34.99);
+
+
+        itemOneImage.add("https://cdn.greatlifepublishing.net/wp-content/uploads/sites/2/2018/12/21230114/Crispy-Roast-Pork-Belly-2.jpg");
+        itemOneName.add("Pork Belly");
+        itemOnePrice.add(34.99);
+
+        itemTwoImage.add("https://thewholecook.com/wp-content/uploads/2020/01/Sweet-Spicy-Chicken-Bites-by-The-Whole-Cook-horizontal-3.jpg");
+        itemTwoName.add("Spicy Chicken");
+        itemTwoPrice.add(37.99);
+
+        itemThreeImage.add("https://img.buzzfeed.com/thumbnailer-prod-us-east-1/d05f9fcc7003488aa2840d15f4a7d470/BFV30005_SpicyKoreanPork-FB1080SQ_H264.jpg");
+        itemThreeName.add("Spicy Pork");
         itemThreePrice.add(34.99);
 
 

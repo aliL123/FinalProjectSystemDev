@@ -4,116 +4,117 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/itemThreeName"
-        android:layout_width="287dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="908dp"
-        android:layout_marginLeft="908dp"
-        android:layout_marginTop="276dp"
-        android:gravity="left"
-        android:text="Item 3 Name"
-        android:textSize="40dp"
+    <ImageView
+        android:id="@+id/itemOneImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/itemThreePrice"
-        android:layout_width="287dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="908dp"
-        android:layout_marginLeft="908dp"
-        android:layout_marginTop="356dp"
-        android:gravity="left"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="732dp"
+        android:layout_marginLeft="732dp"
+        android:layout_marginTop="224dp"
+        android:gravity="center"
         android:text="Item 3 Price"
-        android:textSize="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/itemTwoName"
-        android:layout_width="287dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="508dp"
-        android:layout_marginLeft="508dp"
-        android:layout_marginTop="276dp"
-        android:gravity="left"
-        android:text="Item 2 Name"
-        android:textSize="40dp"
+        android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/itemTwoPrice"
-        android:layout_width="287dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="508dp"
-        android:layout_marginLeft="508dp"
-        android:layout_marginTop="356dp"
-        android:gravity="left"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="404dp"
+        android:layout_marginLeft="404dp"
+        android:layout_marginTop="224dp"
+        android:gravity="center"
         android:text="Item 2 Price"
-        android:textSize="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/itemOnePrice"
-        android:layout_width="287dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="356dp"
-        android:gravity="left"
-        android:text="Item 1 Price"
-        android:textSize="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/itemThreeImage"
-        android:layout_width="204dp"
-        android:layout_height="197dp"
-        android:layout_marginStart="948dp"
-        android:layout_marginLeft="948dp"
-        android:layout_marginTop="56dp"
-        android:src="@drawable/ic_launcher_foreground"
+        android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/itemTwoImage"
-        android:layout_width="204dp"
-        android:layout_height="197dp"
-        android:layout_marginStart="536dp"
-        android:layout_marginLeft="536dp"
-        android:layout_marginTop="56dp"
-        android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/itemOneImage"
-        android:layout_width="204dp"
-        android:layout_height="197dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="444dp"
+        android:layout_marginLeft="444dp"
+        android:layout_marginTop="4dp"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/itemOneName"
-        android:layout_width="287dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="276dp"
-        android:gravity="left"
-        android:text="Item 1 Name"
-        android:textSize="40dp"
+        android:id="@+id/itemTwoName"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="404dp"
+        android:layout_marginLeft="404dp"
+        android:layout_marginTop="168dp"
+        android:gravity="center"
+        android:text="Item 2 Name"
+        android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/itemThreeImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="764dp"
+        android:layout_marginLeft="764dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/itemThreeName"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="732dp"
+        android:layout_marginLeft="732dp"
+        android:layout_marginTop="168dp"
+        android:gravity="center"
+        android:text="Item 3 Name"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/itemOnePrice"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="224dp"
+        android:gravity="center"
+        android:text="Item 1 Price"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/itemOneName"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="168dp"
+        android:gravity="center"
+        android:text="Item 1 Name"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
