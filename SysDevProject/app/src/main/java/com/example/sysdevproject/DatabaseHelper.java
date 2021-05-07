@@ -122,6 +122,36 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return result;
     }
 
+    public Cursor getComboItems() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='combo'", null);
+        return result;
+    }
+
+    public Cursor get2SetItems() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='2set'", null);
+        return result;
+    }
+
+    public Cursor getPlateItems() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='plate'", null);
+        return result;
+    }
+
+    public Cursor getBibimbapItems() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='bibimbap'", null);
+        return result;
+    }
+
+    public Cursor getDrinksItems() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='drinks'", null);
+        return result;
+    }
+
     public void makeItemUnavailable(int id)
     {
         String sql = "UPDATE " + TABLE_ITEMS + " SET available = 1  WHERE " + "item_id" + " = " + "'" + id + "'";

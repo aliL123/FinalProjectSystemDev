@@ -138,31 +138,289 @@ public class MenuScreen extends AppCompatActivity {
         combo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                itemOneImage.clear();
+                itemOneName.clear();
+                itemOnePrice.clear();
+
+                itemTwoImage.clear();
+                itemTwoName.clear();
+                itemTwoPrice.clear();
+
+                itemThreeImage.clear();
+                itemThreeName.clear();
+                itemThreePrice.clear();
+
                 menuScreenTitle.setText("Combo");
+
+
+                Cursor comboItems = db.getComboItems();
+
+                while (comboItems.moveToNext()){
+                    if (comboItems.getString(0).equals("7") ||
+                            comboItems.getString(0).equals("10")) {
+
+                        addItemImage(comboItems.getString(0));
+                        itemOneName.add(comboItems.getString(1));
+                        itemOnePrice.add(comboItems.getDouble(3));
+                    }else if (comboItems.getString(0).equals("8") ||
+                            comboItems.getString(0).equals("11")){
+
+                        addItemImage(comboItems.getString(0));
+                        itemTwoName.add(comboItems.getString(1));
+                        itemTwoPrice.add(comboItems.getDouble(3));
+                    }else if (comboItems.getString(0).equals("9")){
+
+                        addItemImage(comboItems.getString(0));
+                        itemThreeName.add(comboItems.getString(1));
+                        itemThreePrice.add(comboItems.getDouble(3));
+                    }
+                }
+
+                itemThreeImage.add(null);
+                itemThreeName.add(null);
+                itemThreePrice.add(null);
+
+                RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
+                MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
+                        itemTwoImage, itemTwoName, itemTwoPrice,
+                        itemThreeImage, itemThreeName, itemThreePrice,
+                        getApplicationContext());
+                recycleView.setAdapter(adapter);
+                recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
         });
         twoSet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                menuScreenTitle.setText(" 2 set items");
+                itemOneImage.clear();
+                itemOneName.clear();
+                itemOnePrice.clear();
+
+                itemTwoImage.clear();
+                itemTwoName.clear();
+                itemTwoPrice.clear();
+
+                itemThreeImage.clear();
+                itemThreeName.clear();
+                itemThreePrice.clear();
+
+                menuScreenTitle.setText("2 Set");
+
+
+                Cursor twoSetItems = db.get2SetItems();
+
+                while (twoSetItems.moveToNext()){
+                    if (twoSetItems.getString(0).equals("1") ||
+                            twoSetItems.getString(0).equals("4")) {
+
+                        addItemImage(twoSetItems.getString(0));
+                        itemOneName.add(twoSetItems.getString(1));
+                        itemOnePrice.add(twoSetItems.getDouble(3));
+                    }else if (twoSetItems.getString(0).equals("2") ||
+                            twoSetItems.getString(0).equals("5")){
+
+                        addItemImage(twoSetItems.getString(0));
+                        itemTwoName.add(twoSetItems.getString(1));
+                        itemTwoPrice.add(twoSetItems.getDouble(3));
+                    }else if (twoSetItems.getString(0).equals("3") ||
+                            twoSetItems.getString(0).equals("6")){
+
+                        addItemImage(twoSetItems.getString(0));
+                        itemThreeName.add(twoSetItems.getString(1));
+                        itemThreePrice.add(twoSetItems.getDouble(3));
+                    }
+                }
+
+                RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
+                MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
+                        itemTwoImage, itemTwoName, itemTwoPrice,
+                        itemThreeImage, itemThreeName, itemThreePrice,
+                        getApplicationContext());
+                recycleView.setAdapter(adapter);
+                recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
         });
         plate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                itemOneImage.clear();
+                itemOneName.clear();
+                itemOnePrice.clear();
+
+                itemTwoImage.clear();
+                itemTwoName.clear();
+                itemTwoPrice.clear();
+
+                itemThreeImage.clear();
+                itemThreeName.clear();
+                itemThreePrice.clear();
+
                 menuScreenTitle.setText("Plate");
+
+
+                Cursor plateItems = db.getPlateItems();
+
+                while (plateItems.moveToNext()){
+                    if (plateItems.getString(0).equals("19") ||
+                            plateItems.getString(0).equals("22")) {
+
+                        addItemImage(plateItems.getString(0));
+                        itemOneName.add(plateItems.getString(1));
+                        itemOnePrice.add(plateItems.getDouble(3));
+                    }else if (plateItems.getString(0).equals("20") ||
+                            plateItems.getString(0).equals("23")){
+
+                        addItemImage(plateItems.getString(0));
+                        itemTwoName.add(plateItems.getString(1));
+                        itemTwoPrice.add(plateItems.getDouble(3));
+                    }else if (plateItems.getString(0).equals("21") ||
+                            plateItems.getString(0).equals("24")){
+
+                        addItemImage(plateItems.getString(0));
+                        itemThreeName.add(plateItems.getString(1));
+                        itemThreePrice.add(plateItems.getDouble(3));
+                    }
+                }
+
+                RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
+                MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
+                        itemTwoImage, itemTwoName, itemTwoPrice,
+                        itemThreeImage, itemThreeName, itemThreePrice,
+                        getApplicationContext());
+                recycleView.setAdapter(adapter);
+                recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
         });
         bibimbap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                itemOneImage.clear();
+                itemOneName.clear();
+                itemOnePrice.clear();
+
+                itemTwoImage.clear();
+                itemTwoName.clear();
+                itemTwoPrice.clear();
+
+                itemThreeImage.clear();
+                itemThreeName.clear();
+                itemThreePrice.clear();
+
                 menuScreenTitle.setText("Bibimbap");
+
+
+                Cursor bibimbapItems = db.getBibimbapItems();
+
+                while (bibimbapItems.moveToNext()){
+                    if (bibimbapItems.getString(0).equals("12") ||
+                            bibimbapItems.getString(0).equals("15") ||
+                             bibimbapItems.getString(0).equals("18")){
+
+                        addItemImage(bibimbapItems.getString(0));
+                        itemOneName.add(bibimbapItems.getString(1));
+                        itemOnePrice.add(bibimbapItems.getDouble(3));
+                    }else if (bibimbapItems.getString(0).equals("13") ||
+                            bibimbapItems.getString(0).equals("16")){
+
+                        addItemImage(bibimbapItems.getString(0));
+                        itemTwoName.add(bibimbapItems.getString(1));
+                        itemTwoPrice.add(bibimbapItems.getDouble(3));
+                    }else if (bibimbapItems.getString(0).equals("14") ||
+                            bibimbapItems.getString(0).equals("17")){
+
+                        addItemImage(bibimbapItems.getString(0));
+                        itemThreeName.add(bibimbapItems.getString(1));
+                        itemThreePrice.add(bibimbapItems.getDouble(3));
+                    }
+                }
+
+                itemTwoImage.add(null);
+                itemTwoName.add(null);
+                itemTwoPrice.add(null);
+                itemTwoImage.add(null);
+                itemTwoName.add(null);
+                itemTwoPrice.add(null);
+
+                itemThreeImage.add(null);
+                itemThreeName.add(null);
+                itemThreePrice.add(null);
+                itemThreeImage.add(null);
+                itemThreeName.add(null);
+                itemThreePrice.add(null);
+
+                RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
+                MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
+                        itemTwoImage, itemTwoName, itemTwoPrice,
+                        itemThreeImage, itemThreeName, itemThreePrice,
+                        getApplicationContext());
+                recycleView.setAdapter(adapter);
+                recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
         });
         drinks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                itemOneImage.clear();
+                itemOneName.clear();
+                itemOnePrice.clear();
+
+                itemTwoImage.clear();
+                itemTwoName.clear();
+                itemTwoPrice.clear();
+
+                itemThreeImage.clear();
+                itemThreeName.clear();
+                itemThreePrice.clear();
+
                 menuScreenTitle.setText("Drinks");
+
+
+                Cursor drinksItems = db.getDrinksItems();
+
+                while (drinksItems.moveToNext()){
+                    if (drinksItems.getString(0).equals("25") ||
+                            drinksItems.getString(0).equals("28") ||
+                            drinksItems.getString(0).equals("31")) {
+
+                        addItemImage(drinksItems.getString(0));
+                        itemOneName.add(drinksItems.getString(1));
+                        itemOnePrice.add(drinksItems.getDouble(3));
+                    }else if (drinksItems.getString(0).equals("26") ||
+                            drinksItems.getString(0).equals("29")){
+
+                        addItemImage(drinksItems.getString(0));
+                        itemTwoName.add(drinksItems.getString(1));
+                        itemTwoPrice.add(drinksItems.getDouble(3));
+                    }else if (drinksItems.getString(0).equals("27") ||
+                            drinksItems.getString(0).equals("30")){
+
+                        addItemImage(drinksItems.getString(0));
+                        itemThreeName.add(drinksItems.getString(1));
+                        itemThreePrice.add(drinksItems.getDouble(3));
+                    }
+                }
+
+                itemTwoImage.add(null);
+                itemTwoName.add(null);
+                itemTwoPrice.add(null);
+                itemTwoImage.add(null);
+                itemTwoName.add(null);
+                itemTwoPrice.add(null);
+
+                itemThreeImage.add(null);
+                itemThreeName.add(null);
+                itemThreePrice.add(null);
+                itemThreeImage.add(null);
+                itemThreeName.add(null);
+                itemThreePrice.add(null);
+
+                RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
+                MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
+                        itemTwoImage, itemTwoName, itemTwoPrice,
+                        itemThreeImage, itemThreeName, itemThreePrice,
+                        getApplicationContext());
+                recycleView.setAdapter(adapter);
+                recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
         });
 
