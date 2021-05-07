@@ -152,6 +152,13 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return result;
     }
 
+    public Cursor getAllItemsByName(String itemName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE_ITEMS + " WHERE "
+                + "name" + " = " + "'" + itemName + "'", null);
+        return result;
+    }
+
     public void makeItemUnavailable(int id)
     {
         String sql = "UPDATE " + TABLE_ITEMS + " SET available = 1  WHERE " + "item_id" + " = " + "'" + id + "'";
@@ -160,10 +167,29 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         db.execSQL(sql);
         db.close();
     }
+
+    public int getItemName(String itemName) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String selectQuery = "SELECT  * FROM " + TABLE_ITEMS + " WHERE "
+                + "name" + " = " + "'" + itemName + "'";
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        int id = cursor.getInt(cursor.getColumnIndex("item_id"));
+
+        cursor.close();
+        db.close();
+        return id;
+    }
+
     public void deleteItem(int id)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        String sql = "DELETE FROM " + TABLE_ITEMS+ "WHERE " + "item_id" + " = " + "'" + id + "'";
+        String sql = "DELETE FROM " + TABLE_ITEMS+ " WHERE " + "item_id" + " = " + "'" + id + "'";
         db.execSQL(sql);
         db.close();
     }
