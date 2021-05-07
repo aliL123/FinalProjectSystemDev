@@ -16,6 +16,7 @@
         <activity android:name=".AdminAddItemActivity"></activity>
         <activity android:name=".MenuScreen" />
         <activity android:name=".LoginAdminActivity" />
+        <activity android:name=".AdminHomeActivity"/>
         <activity android:name=".ReceiptScreen" />
         <activity android:name=".CartScreen" />
         <activity android:name=".MainActivity">

@@ -40,6 +40,10 @@ public class LoginAdminActivity extends AppCompatActivity  {
                 String user = username.getText().toString().trim();
                 String pass = password.getText().toString().trim();
 
+                if(user.equals("admin") && pass.equals("greenTeam123")){
+                    startActivity(new Intent(LoginAdminActivity.this, AdminHomeActivity.class));
+                }
+
                 if(user.isEmpty()){
                     Toast.makeText(LoginAdminActivity.this, "Please enter a username", Toast.LENGTH_SHORT).show();
                     return;
@@ -49,8 +53,6 @@ public class LoginAdminActivity extends AppCompatActivity  {
                     Toast.makeText(LoginAdminActivity.this, "Please enter a password", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-
             }
         });
 

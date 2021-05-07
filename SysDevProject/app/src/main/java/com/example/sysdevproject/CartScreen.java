@@ -10,7 +10,8 @@ import java.util.ArrayList;
 
 public class CartScreen extends AppCompatActivity {
 
-    ArrayList<String> itemNames, itemQuantities = new ArrayList<>();
+    ArrayList<String> itemNames = new ArrayList<>();
+    ArrayList<String> itemQuantities = new ArrayList<>();
     RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
