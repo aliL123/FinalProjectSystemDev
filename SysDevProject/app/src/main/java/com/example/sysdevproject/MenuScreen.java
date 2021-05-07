@@ -82,7 +82,7 @@ public class MenuScreen extends AppCompatActivity {
                 addItemImage(allItems.getString(0));
                 itemOneName.add(allItems.getString(1));
                 itemOnePrice.add(allItems.getDouble(3));
-            }else if (allItems.getString(0).equals("2") ||
+            } else if (allItems.getString(0).equals("2") ||
                     allItems.getString(0).equals("5") ||
                     allItems.getString(0).equals("8") ||
                     allItems.getString(0).equals("11") ||
@@ -97,7 +97,7 @@ public class MenuScreen extends AppCompatActivity {
                 addItemImage(allItems.getString(0));
                 itemTwoName.add(allItems.getString(1));
                 itemTwoPrice.add(allItems.getDouble(3));
-            }else if (allItems.getString(0).equals("3") ||
+            } else if (allItems.getString(0).equals("3") ||
                     allItems.getString(0).equals("6") ||
                     allItems.getString(0).equals("9") ||
                     allItems.getString(0).equals("12") ||
