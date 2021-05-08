@@ -57,7 +57,7 @@ public class AdminDeleteItemActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Cursor cursor = (Cursor) simpleCursorAdapter.getItem(position);
                         String name = cursor.getColumnName(1);
-                        cursor.
+                        //cursor.
 
                     }
                 });
