@@ -30,7 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             "create table Employee ( employee_id Integer primary key autoincrement, name varchar(16));";
 
     private static final String CREATE_TABLE_CUSTOMER =
-            "create table Customer ( customer_id Integer primary key autoincrement, isOver18 Integer);";
+            "create table Customer ( customer_id Integer primary key autoincrement, isOver18 Integer, paymentMethod text);";
 
     private static final String CREATE_TABLE_ORDERS =
             "create table Orders ( order_id Integer primary key autoincrement, customer_id Integer,  payment_method varchar(16), total_price double, foreign key(customer_id) references Customer(customer_id));";
@@ -80,11 +80,12 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         }
     }
 
-    public boolean insertCustomer(String isOver18)
+    public boolean insertCustomer(int isOver18, String payment)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("isOver18", isOver18);
+        contentValues.put("paymentMethod", payment);
         long result = db.insert(TABLE_CUSTOMER, null, contentValues);
 
         if (result == -1) {
@@ -93,6 +94,22 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             return true;
         }
     }
+    public boolean updateCustomer(String id, String payment){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("customer_id", id);
+        contentValues.put("paymentMethod", payment);
+        db.update(TABLE_CUSTOMER, contentValues, "customer_id = ? ",new String[] {id});
+        return true;
+    }
+
+    public Cursor findLastCustomer(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result;
+        result = db.rawQuery("SELECT * from " + TABLE_CUSTOMER + " ORDER BY customer_id DESC LIMIT 1", null);
+        return result;
+    }
+
     public Item getItem(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 

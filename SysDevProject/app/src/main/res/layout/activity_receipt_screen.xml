@@ -35,7 +35,7 @@
         android:layout_marginLeft="724dp"
         android:layout_marginTop="472dp"
         android:gravity="left"
-        android:text="Sub-total:"
+        android:text="@string/receipt_screen_sub_total"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -74,7 +74,7 @@
         android:layout_marginLeft="724dp"
         android:layout_marginTop="624dp"
         android:gravity="left"
-        android:text="Final Price:"
+        android:text="@string/receipt_screen_final_total"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -100,8 +100,8 @@
         android:layout_marginLeft="724dp"
         android:layout_marginTop="576dp"
         android:gravity="left"
-        android:text="QST(9.975%):"
-        android:textSize="30dp"
+        android:text="QST/TVQ(9.975%):"
+        android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -126,7 +126,7 @@
         android:layout_marginLeft="724dp"
         android:layout_marginTop="524dp"
         android:gravity="left"
-        android:text="GST(5%):"
+        android:text="GST/TPS(5%):"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -139,7 +139,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="236dp"
         android:backgroundTint="@color/teal_700"
-        android:text="Print"
+        android:text="@string/receipt_screen_print"
         android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/receiptRecyclerView" />
@@ -164,7 +164,7 @@
         android:layout_marginTop="1dp"
         android:gravity="center"
         android:textSize="30dp"
-        android:text="Here is your receipt, please pass this to the cashier to proceed with the order"
+        android:text="@string/receipt_screen_title"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="@color/white"
         android:background="@color/teal_700"

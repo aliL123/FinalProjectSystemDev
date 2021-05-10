@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
 
     DatabaseHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,14 +45,16 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-//                        finish();
+                        db.insertCustomer(1, "");
+
                         Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                         startActivity(intent);
                     }
                 }).setNegativeButton("Non", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
+                        db.insertCustomer(0, "");
+
                         Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                         startActivity(intent);
                     }
@@ -69,16 +72,20 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                db.insertCustomer(1, "");
+
                                 Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                                 startActivity(intent);
                             }
                         }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(MainActivity.this, MenuScreen.class);
-                        startActivity(intent);
-                    }
-                });
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                db.insertCustomer(0, "");
+
+                                Intent intent = new Intent(MainActivity.this, MenuScreen.class);
+                                startActivity(intent);
+                            }
+                        });
                 AlertDialog alert = builder.create();
                 alert.show();
             }
@@ -86,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
         settingButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v)  {
-
                 startActivity(new Intent(MainActivity.this, LoginAdminActivity.class));
             }
         });

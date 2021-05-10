@@ -87,7 +87,7 @@
         android:layout_height="104dp"
         android:layout_marginTop="7dp"
         android:gravity="center"
-        android:text="MENU"
+        android:text="@string/menu_title"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/menuComboButton"
         app:layout_constraintTop_toTopOf="parent" />

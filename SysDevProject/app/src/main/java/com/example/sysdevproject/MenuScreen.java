@@ -41,7 +41,7 @@ public class MenuScreen extends AppCompatActivity {
     ArrayList<Integer> itemThreeIsAvailable = new ArrayList<>();
 
     Button combo, twoSet, plate, bibimbap, drinks;
-    Button viewCart, cancel;
+    Button checkoutBtn, cancel;
     TextView menuScreenTitle;
 
     @Override
@@ -58,7 +58,7 @@ public class MenuScreen extends AppCompatActivity {
         drinks = findViewById(R.id.menuDrinksButton);
         menuScreenTitle = findViewById(R.id.menuScreenHeader);
 
-        viewCart = findViewById(R.id.menuCheckoutButton);
+        checkoutBtn = findViewById(R.id.menuCheckoutButton);
         cancel = findViewById(R.id.menuCancelOrderButton);
 
         Cursor allItems = db.getAllItems();
@@ -425,10 +425,18 @@ public class MenuScreen extends AppCompatActivity {
         });
 
 
-        viewCart.setOnClickListener(new View.OnClickListener() {
+        checkoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuScreen.this, CartScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuScreen.this, MainActivity.class);
                 startActivity(intent);
             }
         });
