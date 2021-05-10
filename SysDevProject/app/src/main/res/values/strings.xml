@@ -13,11 +13,11 @@
         <string name="payment_Screen_Header">Choose a payment method</string>
         <string name="payment_Screen_Card">Card</string>
         <string name="payment_Screen_Cash">Cash</string>
-        <string name=""></string>
-        <string name=""></string>
-        <string name=""></string>
-        <string name=""></string>
-        <string name=""></string>
+        <string name="cancel_order">cancel order</string>
+        <string name="cart_screen_checkout">Finalize order and checkout</string>
+        <string name="item_price">Price</string>
+        <string name="item_description">Description:</string>
+        <string name="item_cart">Add Cart</string>
         <string name=""></string>
 
     <string-array name="category">

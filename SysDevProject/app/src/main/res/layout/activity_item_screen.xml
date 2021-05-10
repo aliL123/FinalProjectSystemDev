@@ -10,11 +10,25 @@
         android:id="@+id/itemImage"
         android:layout_width="412dp"
         android:layout_height="316dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="108dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hohologo" />
+
+    <TextView
+        android:id="@+id/textViewItemTitle"
+        android:layout_width="786dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Item Title"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toEndOf="@+id/itemScreenBackImageButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/itemPrice"
@@ -23,18 +37,29 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:textSize="20dp"
-        android:text="Price"
+        android:text="@string/item_price"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemImage" />
 
     <TextView
+        android:id="@+id/titleDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_description"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemPrice" />
+
+    <TextView
         android:id="@+id/itemDescription"
         android:layout_width="737dp"
         android:layout_height="182dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:textSize="20dp"
-        android:text="Description"
+        android:text="Context"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemPrice" />
@@ -44,7 +69,7 @@
         android:layout_width="278dp"
         android:layout_height="79dp"
         android:layout_marginTop="10dp"
-        android:text="Add Cart"
+        android:text="@string/item_cart"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
