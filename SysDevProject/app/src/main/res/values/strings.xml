@@ -9,16 +9,19 @@
     <string name="cart_title">Here is a list of your items, you may adjust their quantity as
         well as delete a specific item of completely cancel your order.</string>
 
-        <string name="menu_title"> MENU</string>
-        <string name="payment_Screen_Header">Choose a payment method</string>
-        <string name="payment_Screen_Card">Card</string>
-        <string name="payment_Screen_Cash">Cash</string>
-        <string name="cancel_order">cancel order</string>
-        <string name="cart_screen_checkout">Finalize order and checkout</string>
-        <string name="item_price">Price</string>
-        <string name="item_description">Description:</string>
-        <string name="item_cart">Add Cart</string>
-        <string name=""></string>
+    <string name="menu_title"> MENU</string>
+    <string name="payment_Screen_Header">Choose a payment method</string>
+    <string name="payment_Screen_Card">Card</string>
+    <string name="payment_Screen_Cash">Cash</string>
+    <string name="cancel_order">cancel order</string>
+    <string name="cart_screen_checkout">Finalize order and checkout</string>
+    <string name="item_price">Price</string>
+    <string name="item_description">Description:</string>
+    <string name="item_cart">Add Cart</string>
+    <string name="receipt_screen_title">Here is your receipt, please pass this to the cashier to proceed with the order</string>
+    <string name="receipt_screen_sub_total">Sub-total:</string>
+    <string name="receipt_screen_final_total">Final Price:</string>
+    <string name="receipt_screen_print">Print</string>
 
     <string-array name="category">
         <item>Combo</item>
