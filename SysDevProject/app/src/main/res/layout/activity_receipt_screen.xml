@@ -6,15 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".ReceiptScreen">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/receiptRecyclerView"
+        android:layout_width="1159dp"
+        android:layout_height="313dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="140dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/receiptRestaurantLogo"
+        android:layout_width="180dp"
+        android:layout_height="155dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginLeft="288dp"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/hohologo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/receiptRecyclerView" />
+
     <TextView
-        android:id="@+id/receiptFinalPriceValue"
-        android:layout_width="265dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="952dp"
-        android:layout_marginLeft="952dp"
-        android:layout_marginTop="764dp"
-        android:gravity="right"
-        android:text="$170.12"
+        android:id="@+id/receiptSubTotal"
+        android:layout_width="215dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="724dp"
+        android:layout_marginLeft="724dp"
+        android:layout_marginTop="472dp"
+        android:gravity="left"
+        android:text="Sub-total:"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,10 +43,10 @@
     <TextView
         android:id="@+id/receiptQSTPrice"
         android:layout_width="265dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="952dp"
-        android:layout_marginLeft="952dp"
-        android:layout_marginTop="700dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="948dp"
+        android:layout_marginLeft="948dp"
+        android:layout_marginTop="576dp"
         android:gravity="right"
         android:text="$14.76"
         android:textSize="30dp"
@@ -33,25 +54,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/receiptGSTPrice"
-        android:layout_width="265dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="952dp"
-        android:layout_marginLeft="952dp"
-        android:layout_marginTop="624dp"
-        android:gravity="right"
-        android:text="$7.40"
-        android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/receiptSubTotalPrice"
         android:layout_width="265dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="952dp"
-        android:layout_marginLeft="952dp"
-        android:layout_marginTop="548dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="948dp"
+        android:layout_marginLeft="948dp"
+        android:layout_marginTop="472dp"
         android:gravity="right"
         android:text="$147.96"
         android:textSize="30dp"
@@ -61,10 +69,10 @@
     <TextView
         android:id="@+id/receiptFinalPrice"
         android:layout_width="215dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="728dp"
-        android:layout_marginLeft="720dp"
-        android:layout_marginTop="764dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="724dp"
+        android:layout_marginLeft="724dp"
+        android:layout_marginTop="624dp"
         android:gravity="left"
         android:text="Final Price:"
         android:textSize="30dp"
@@ -72,12 +80,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/receiptGSTPrice"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="948dp"
+        android:layout_marginLeft="948dp"
+        android:layout_marginTop="524dp"
+        android:gravity="right"
+        android:text="$7.40"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/receiptQST"
         android:layout_width="215dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="728dp"
-        android:layout_marginLeft="732dp"
-        android:layout_marginTop="696dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="724dp"
+        android:layout_marginLeft="724dp"
+        android:layout_marginTop="576dp"
         android:gravity="left"
         android:text="QST(9.975%):"
         android:textSize="30dp"
@@ -85,38 +106,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/receiptGST"
-        android:layout_width="215dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="728dp"
-        android:layout_marginLeft="732dp"
+        android:id="@+id/receiptFinalPriceValue"
+        android:layout_width="265dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="948dp"
+        android:layout_marginLeft="948dp"
         android:layout_marginTop="624dp"
-        android:gravity="left"
-        android:text="GST(5%):"
+        android:gravity="right"
+        android:text="$170.12"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/receiptSubTotal"
+        android:id="@+id/receiptGST"
         android:layout_width="215dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="728dp"
-        android:layout_marginLeft="728dp"
-        android:layout_marginTop="548dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="724dp"
+        android:layout_marginLeft="724dp"
+        android:layout_marginTop="524dp"
         android:gravity="left"
-        android:text="Sub-total:"
+        android:text="GST(5%):"
         android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/receiptRecyclerView"
-        android:layout_width="1161dp"
-        android:layout_height="397dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="140dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -126,23 +137,12 @@
         android:layout_height="71dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="292dp"
-        android:text="Print"
+        android:layout_marginTop="236dp"
         android:backgroundTint="@color/teal_700"
+        android:text="Print"
         android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/receiptRecyclerView" />
-
-    <ImageView
-        android:id="@+id/receiptRestaurantLogo"
-        android:layout_width="291dp"
-        android:layout_height="225dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginLeft="208dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/receiptRecyclerView"
-        android:src="@drawable/hohologo" />
 
     <TextView
         android:id="@+id/receiptTotalText"

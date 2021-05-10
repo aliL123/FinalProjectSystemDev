@@ -12,11 +12,12 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.SysDevProject">
+        <activity android:name=".PaymentMethodScreen"></activity>
         <activity android:name=".ItemScreen" />
-        <activity android:name=".AdminAddItemActivity"></activity>
+        <activity android:name=".AdminAddItemActivity" />
         <activity android:name=".MenuScreen" />
         <activity android:name=".LoginAdminActivity" />
-        <activity android:name=".AdminHomeActivity"/>
+        <activity android:name=".AdminHomeActivity" />
         <activity android:name=".ReceiptScreen" />
         <activity android:name=".CartScreen" />
         <activity android:name=".MainActivity">
