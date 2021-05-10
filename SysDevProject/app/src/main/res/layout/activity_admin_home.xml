@@ -8,12 +8,13 @@
 
     <Button
         android:id="@+id/addItem"
-        android:layout_width="134dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="480dp"
-        android:layout_marginRight="480dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="824dp"
+        android:layout_marginRight="824dp"
         android:text="Add new item"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Admin Home"
-        android:textSize="30dp"
+        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
@@ -30,28 +31,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043" />
 
+
     <Button
         android:id="@+id/itemAvailability"
-        android:layout_width="135dp"
-        android:layout_height="94dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginRight="120dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginRight="156dp"
         android:text="Item availability"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/deleteItem"
-        android:layout_width="134dp"
-        android:layout_height="97dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="300dp"
-        android:layout_marginRight="300dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="488dp"
+        android:layout_marginRight="488dp"
         android:text="Delete item"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <ImageView
         android:layout_width="112dp"
