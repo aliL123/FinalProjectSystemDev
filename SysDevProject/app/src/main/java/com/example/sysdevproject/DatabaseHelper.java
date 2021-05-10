@@ -30,7 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             "create table Employee ( employee_id Integer primary key autoincrement, name varchar(16));";
 
     private static final String CREATE_TABLE_CUSTOMER =
-            "create table Customer ( customer_id Integer primary key autoincrement, isOver18 Integer);";
+            "create table Customer ( customer_id Integer primary key autoincrement, isOver18 Integer, paymentMethod text);";
 
     private static final String CREATE_TABLE_ORDERS =
             "create table Orders ( order_id Integer primary key autoincrement, customer_id Integer,  payment_method varchar(16), total_price double, foreign key(customer_id) references Customer(customer_id));";
@@ -80,11 +80,12 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         }
     }
 
-    public boolean insertCustomer(String isOver18)
+    public boolean insertCustomer(int isOver18, String payment)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("isOver18", isOver18);
+        contentValues.put("paymentMethod", payment);
         long result = db.insert(TABLE_CUSTOMER, null, contentValues);
 
         if (result == -1) {
