@@ -77,14 +77,14 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        db.insertCustomer(0, "");
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                db.insertCustomer(0, "");
 
-                        Intent intent = new Intent(MainActivity.this, MenuScreen.class);
-                        startActivity(intent);
-                    }
-                });
+                                Intent intent = new Intent(MainActivity.this, MenuScreen.class);
+                                startActivity(intent);
+                            }
+                        });
                 AlertDialog alert = builder.create();
                 alert.show();
             }
@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
 
         settingButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v)  {
-
                 startActivity(new Intent(MainActivity.this, LoginAdminActivity.class));
             }
         });
