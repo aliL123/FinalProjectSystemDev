@@ -53,7 +53,7 @@
         android:layout_marginStart="252dp"
         android:layout_marginLeft="252dp"
         android:layout_marginTop="232dp"
-        android:src="@drawable/cardpayment"
+        android:src="@drawable/cardpaymentmastercard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
