@@ -94,6 +94,22 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             return true;
         }
     }
+    public boolean updateCustomer(String id, String payment){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("customer_id", id);
+        contentValues.put("paymentMethod", payment);
+        db.update(TABLE_CUSTOMER, contentValues, "customer_id = ? ",new String[] {id});
+        return true;
+    }
+
+    public Cursor findLastCustomer(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result;
+        result = db.rawQuery("SELECT * from " + TABLE_CUSTOMER + " ORDER BY customer_id DESC LIMIT 1", null);
+        return result;
+    }
+
     public Item getItem(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 

@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
 
     DatabaseHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
