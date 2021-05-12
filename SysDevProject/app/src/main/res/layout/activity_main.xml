@@ -9,7 +9,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to HOHO Korean BBQ!"
+        android:text="
+Bienvenue au BBQ coréen HOHO!/Welcome to HOHO Korean BBQ!"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
@@ -20,9 +21,9 @@
 
     <Button
         android:id="@+id/englishbtn"
-        android:layout_width="167dp"
+        android:layout_width="wrap_content"
         android:layout_height="74dp"
-        android:text="English"
+        android:text="Anglais/English"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.353"
@@ -33,9 +34,9 @@
 
     <Button
         android:id="@+id/frenchbtn"
-        android:layout_width="167dp"
+        android:layout_width="wrap_content"
         android:layout_height="74dp"
-        android:text="French"
+        android:text="français/French"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.672"
