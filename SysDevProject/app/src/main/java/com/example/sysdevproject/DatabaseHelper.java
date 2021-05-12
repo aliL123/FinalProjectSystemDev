@@ -231,4 +231,10 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         }
     }
 
+    public Cursor getItemFromCart(int customerId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE_CART + " WHERE customer_id = " + customerId, null);
+        return result;
+    }
+
 }

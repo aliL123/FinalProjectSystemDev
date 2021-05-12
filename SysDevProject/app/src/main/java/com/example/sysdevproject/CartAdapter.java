@@ -19,12 +19,12 @@ import java.util.ArrayList;
 
 public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder>{
     ArrayList<String> itemNames = new ArrayList<>();
-    ArrayList<String> itemQuantities = new ArrayList<>();
+    ArrayList<Integer> itemQuantities = new ArrayList<>();
 
     Context mContext;
 
     public CartAdapter(ArrayList<String> itemNames,
-                       ArrayList<String> itemQuantities,
+                       ArrayList<Integer> itemQuantities,
                        Context mContext) {
 
         this.itemNames = itemNames;
@@ -43,7 +43,7 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull CartAdapter.ViewHolder holder, int position) {
 
         holder.cartItemTextView.setText(itemNames.get(position));
-        holder.cartQuantityTextView.setText(itemQuantities.get(position));
+        holder.cartQuantityTextView.setText(itemQuantities.get(position)+"");
     }
 
     @Override
