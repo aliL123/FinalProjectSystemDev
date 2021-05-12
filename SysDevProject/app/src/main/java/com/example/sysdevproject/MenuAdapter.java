@@ -19,32 +19,38 @@ import java.util.ArrayList;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
 
+    ArrayList<Integer> idsOne = new ArrayList<>();
     ArrayList<String> imagesOne = new ArrayList<>();
     ArrayList<String> namesOne = new ArrayList<>();
     ArrayList<Double> pricesOne = new ArrayList<>();
 
+    ArrayList<Integer> idsTwo = new ArrayList<>();
     ArrayList<String> imagesTwo = new ArrayList<>();
     ArrayList<String> namesTwo = new ArrayList<>();
     ArrayList<Double> pricesTwo = new ArrayList<>();
 
+    ArrayList<Integer> idsThree = new ArrayList<>();
     ArrayList<String> imagesThree = new ArrayList<>();
     ArrayList<String> namesThree = new ArrayList<>();
     ArrayList<Double> pricesThree = new ArrayList<>();
     Context mContext;
 
-    public MenuAdapter(ArrayList<String> imageOne, ArrayList<String> nameOne, ArrayList<Double> priceOne,
-                       ArrayList<String> imageTwo, ArrayList<String> nameTwo, ArrayList<Double> priceTwo,
-                       ArrayList<String> imagesThree, ArrayList<String> namesThree, ArrayList<Double> pricesThree,
+    public MenuAdapter(ArrayList<Integer> idsOne, ArrayList<String> imageOne, ArrayList<String> nameOne, ArrayList<Double> priceOne,
+                       ArrayList<Integer> idsTwo, ArrayList<String> imageTwo, ArrayList<String> nameTwo, ArrayList<Double> priceTwo,
+                       ArrayList<Integer> idsThree, ArrayList<String> imagesThree, ArrayList<String> namesThree, ArrayList<Double> pricesThree,
                        Context mContext) {
 
+        this.idsOne = idsOne;
         this.imagesOne = imageOne;
         this.namesOne = nameOne;
         this.pricesOne = priceOne;
 
+        this.idsTwo = idsTwo;
         this.imagesTwo = imageTwo;
         this.namesTwo = nameTwo;
         this.pricesTwo = priceTwo;
 
+        this.idsThree = idsThree;
         this.imagesThree = imagesThree;
         this.namesThree = namesThree;
         this.pricesThree = pricesThree;
@@ -118,7 +124,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, ItemScreen.class);
+                    intent.putExtra("id", idsOne.get(getAdapterPosition()));
                     intent.putExtra("image", imagesOne.get(getAdapterPosition()));
+                    intent.putExtra("name", namesOne.get(getAdapterPosition()));
                     intent.putExtra("price", pricesOne.get(getAdapterPosition()));
                     v.getContext().startActivity(intent);
                 }
@@ -128,7 +136,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, ItemScreen.class);
+                    intent.putExtra("id", idsTwo.get(getAdapterPosition()));
                     intent.putExtra("image", imagesTwo.get(getAdapterPosition()));
+                    intent.putExtra("name", namesTwo.get(getAdapterPosition()));
                     intent.putExtra("price", pricesTwo.get(getAdapterPosition()));
                     v.getContext().startActivity(intent);
                 }
@@ -138,7 +148,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, ItemScreen.class);
+                    intent.putExtra("id", idsThree.get(getAdapterPosition()));
                     intent.putExtra("image", imagesThree.get(getAdapterPosition()));
+                    intent.putExtra("name", namesThree.get(getAdapterPosition()));
                     intent.putExtra("price", pricesThree.get(getAdapterPosition()));
                     v.getContext().startActivity(intent);
                 }

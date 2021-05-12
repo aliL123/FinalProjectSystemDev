@@ -19,26 +19,20 @@ public class MenuScreen extends AppCompatActivity {
 
     DatabaseHelper db;
 
+    ArrayList<Integer> itemOneId = new ArrayList<>();
     ArrayList<String> itemOneImage = new ArrayList<>();
     ArrayList<String> itemOneName = new ArrayList<>();
-    ArrayList<String> itemOneDescription = new ArrayList<>();
     ArrayList<Double> itemOnePrice = new ArrayList<>();
-    ArrayList<Integer> itemOneIsDrink = new ArrayList<>();
-    ArrayList<Integer> itemOneIsAvailable = new ArrayList<>();
 
+    ArrayList<Integer> itemTwoId = new ArrayList<>();
     ArrayList<String> itemTwoImage = new ArrayList<>();
     ArrayList<String> itemTwoName = new ArrayList<>();
-    ArrayList<String> itemTwoDescription = new ArrayList<>();
     ArrayList<Double> itemTwoPrice = new ArrayList<>();
-    ArrayList<Integer> itemTwoIsDrink = new ArrayList<>();
-    ArrayList<Integer> itemTwoIsAvailable = new ArrayList<>();
 
+    ArrayList<Integer> itemThreeId = new ArrayList<>();
     ArrayList<String> itemThreeImage = new ArrayList<>();
     ArrayList<String> itemThreeName = new ArrayList<>();
-    ArrayList<String> itemThreeDescription = new ArrayList<>();
     ArrayList<Double> itemThreePrice = new ArrayList<>();
-    ArrayList<Integer> itemThreeIsDrink = new ArrayList<>();
-    ArrayList<Integer> itemThreeIsAvailable = new ArrayList<>();
 
     Button combo, twoSet, plate, bibimbap, drinks;
     Button checkoutBtn, cancel;
@@ -79,6 +73,7 @@ public class MenuScreen extends AppCompatActivity {
                     allItems.getString(0).equals("31")){
                 //Toast.makeText(MenuScreen.this, allItems.getString(0) + allItems.getString(1), Toast.LENGTH_SHORT).show();
 
+                itemOneId.add(allItems.getInt(0));
                 addItemImage(allItems.getString(0));
                 itemOneName.add(allItems.getString(1));
                 itemOnePrice.add(allItems.getDouble(3));
@@ -94,6 +89,7 @@ public class MenuScreen extends AppCompatActivity {
                     allItems.getString(0).equals("29")){
                 //Toast.makeText(MenuScreen.this, allItems.getString(0) + allItems.getString(1), Toast.LENGTH_SHORT).show();
 
+                itemTwoId.add(allItems.getInt(0));
                 addItemImage(allItems.getString(0));
                 itemTwoName.add(allItems.getString(1));
                 itemTwoPrice.add(allItems.getDouble(3));
@@ -109,27 +105,28 @@ public class MenuScreen extends AppCompatActivity {
                     allItems.getString(0).equals("30")){
                 //Toast.makeText(MenuScreen.this, allItems.getString(0) + allItems.getString(1), Toast.LENGTH_SHORT).show();
 
+                itemThreeId.add(allItems.getInt(0));
                 addItemImage(allItems.getString(0));
                 itemThreeName.add(allItems.getString(1));
                 itemThreePrice.add(allItems.getDouble(3));
             }
         }
 
-        if (itemOneImage.size() != itemTwoImage.size()){
-            itemTwoImage.add(null);
-            itemTwoName.add(null);
-            itemTwoPrice.add(null);
+        itemTwoId.add(null);
+        itemTwoImage.add(null);
+        itemTwoName.add(null);
+        itemTwoPrice.add(null);
 
-            itemThreeImage.add(null);
-            itemThreeName.add(null);
-            itemThreePrice.add(null);
-        }
+        itemThreeId.add(null);
+        itemThreeImage.add(null);
+        itemThreeName.add(null);
+        itemThreePrice.add(null);
 
 
         RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
-        MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
-                itemTwoImage, itemTwoName, itemTwoPrice,
-                itemThreeImage, itemThreeName, itemThreePrice,
+        MenuAdapter adapter = new MenuAdapter(itemOneId, itemOneImage, itemOneName, itemOnePrice,
+                itemTwoId, itemTwoImage, itemTwoName, itemTwoPrice,
+                itemThreeId, itemThreeImage, itemThreeName, itemThreePrice,
                 this);
         recycleView.setAdapter(adapter);
         recycleView.setLayoutManager(new LinearLayoutManager(this));
@@ -159,31 +156,35 @@ public class MenuScreen extends AppCompatActivity {
                     if (comboItems.getString(0).equals("7") ||
                             comboItems.getString(0).equals("10")) {
 
+                        itemOneId.add(allItems.getInt(0));
                         addItemImage(comboItems.getString(0));
                         itemOneName.add(comboItems.getString(1));
                         itemOnePrice.add(comboItems.getDouble(3));
                     }else if (comboItems.getString(0).equals("8") ||
                             comboItems.getString(0).equals("11")){
 
+                        itemTwoId.add(allItems.getInt(0));
                         addItemImage(comboItems.getString(0));
                         itemTwoName.add(comboItems.getString(1));
                         itemTwoPrice.add(comboItems.getDouble(3));
                     }else if (comboItems.getString(0).equals("9")){
 
+                        itemThreeId.add(allItems.getInt(0));
                         addItemImage(comboItems.getString(0));
                         itemThreeName.add(comboItems.getString(1));
                         itemThreePrice.add(comboItems.getDouble(3));
                     }
                 }
 
+                itemThreeId.add(null);
                 itemThreeImage.add(null);
                 itemThreeName.add(null);
                 itemThreePrice.add(null);
 
                 RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
-                MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
-                        itemTwoImage, itemTwoName, itemTwoPrice,
-                        itemThreeImage, itemThreeName, itemThreePrice,
+                MenuAdapter adapter = new MenuAdapter(itemOneId, itemOneImage, itemOneName, itemOnePrice,
+                        itemTwoId, itemTwoImage, itemTwoName, itemTwoPrice,
+                        itemThreeId, itemThreeImage, itemThreeName, itemThreePrice,
                         getApplicationContext());
                 recycleView.setAdapter(adapter);
                 recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -213,18 +214,21 @@ public class MenuScreen extends AppCompatActivity {
                     if (twoSetItems.getString(0).equals("1") ||
                             twoSetItems.getString(0).equals("4")) {
 
+                        itemOneId.add(allItems.getInt(0));
                         addItemImage(twoSetItems.getString(0));
                         itemOneName.add(twoSetItems.getString(1));
                         itemOnePrice.add(twoSetItems.getDouble(3));
                     }else if (twoSetItems.getString(0).equals("2") ||
                             twoSetItems.getString(0).equals("5")){
 
+                        itemTwoId.add(allItems.getInt(0));
                         addItemImage(twoSetItems.getString(0));
                         itemTwoName.add(twoSetItems.getString(1));
                         itemTwoPrice.add(twoSetItems.getDouble(3));
                     }else if (twoSetItems.getString(0).equals("3") ||
                             twoSetItems.getString(0).equals("6")){
 
+                        itemThreeId.add(allItems.getInt(0));
                         addItemImage(twoSetItems.getString(0));
                         itemThreeName.add(twoSetItems.getString(1));
                         itemThreePrice.add(twoSetItems.getDouble(3));
@@ -232,9 +236,9 @@ public class MenuScreen extends AppCompatActivity {
                 }
 
                 RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
-                MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
-                        itemTwoImage, itemTwoName, itemTwoPrice,
-                        itemThreeImage, itemThreeName, itemThreePrice,
+                MenuAdapter adapter = new MenuAdapter(itemOneId, itemOneImage, itemOneName, itemOnePrice,
+                        itemTwoId, itemTwoImage, itemTwoName, itemTwoPrice,
+                        itemThreeId, itemThreeImage, itemThreeName, itemThreePrice,
                         getApplicationContext());
                 recycleView.setAdapter(adapter);
                 recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -264,18 +268,21 @@ public class MenuScreen extends AppCompatActivity {
                     if (plateItems.getString(0).equals("19") ||
                             plateItems.getString(0).equals("22")) {
 
+                        itemOneId.add(allItems.getInt(0));
                         addItemImage(plateItems.getString(0));
                         itemOneName.add(plateItems.getString(1));
                         itemOnePrice.add(plateItems.getDouble(3));
                     }else if (plateItems.getString(0).equals("20") ||
                             plateItems.getString(0).equals("23")){
 
+                        itemTwoId.add(allItems.getInt(0));
                         addItemImage(plateItems.getString(0));
                         itemTwoName.add(plateItems.getString(1));
                         itemTwoPrice.add(plateItems.getDouble(3));
                     }else if (plateItems.getString(0).equals("21") ||
                             plateItems.getString(0).equals("24")){
 
+                        itemThreeId.add(allItems.getInt(0));
                         addItemImage(plateItems.getString(0));
                         itemThreeName.add(plateItems.getString(1));
                         itemThreePrice.add(plateItems.getDouble(3));
@@ -283,9 +290,9 @@ public class MenuScreen extends AppCompatActivity {
                 }
 
                 RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
-                MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
-                        itemTwoImage, itemTwoName, itemTwoPrice,
-                        itemThreeImage, itemThreeName, itemThreePrice,
+                MenuAdapter adapter = new MenuAdapter(itemOneId, itemOneImage, itemOneName, itemOnePrice,
+                        itemTwoId, itemTwoImage, itemTwoName, itemTwoPrice,
+                        itemThreeId, itemThreeImage, itemThreeName, itemThreePrice,
                         getApplicationContext());
                 recycleView.setAdapter(adapter);
                 recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -316,42 +323,49 @@ public class MenuScreen extends AppCompatActivity {
                             bibimbapItems.getString(0).equals("15") ||
                              bibimbapItems.getString(0).equals("18")){
 
+                        itemOneId.add(allItems.getInt(0));
                         addItemImage(bibimbapItems.getString(0));
                         itemOneName.add(bibimbapItems.getString(1));
                         itemOnePrice.add(bibimbapItems.getDouble(3));
                     }else if (bibimbapItems.getString(0).equals("13") ||
                             bibimbapItems.getString(0).equals("16")){
 
+                        itemTwoId.add(allItems.getInt(0));
                         addItemImage(bibimbapItems.getString(0));
                         itemTwoName.add(bibimbapItems.getString(1));
                         itemTwoPrice.add(bibimbapItems.getDouble(3));
                     }else if (bibimbapItems.getString(0).equals("14") ||
                             bibimbapItems.getString(0).equals("17")){
 
+                        itemThreeId.add(allItems.getInt(0));
                         addItemImage(bibimbapItems.getString(0));
                         itemThreeName.add(bibimbapItems.getString(1));
                         itemThreePrice.add(bibimbapItems.getDouble(3));
                     }
                 }
 
+                itemTwoId.add(null);
                 itemTwoImage.add(null);
                 itemTwoName.add(null);
                 itemTwoPrice.add(null);
+                itemTwoId.add(null);
                 itemTwoImage.add(null);
                 itemTwoName.add(null);
                 itemTwoPrice.add(null);
 
+                itemThreeId.add(null);
                 itemThreeImage.add(null);
                 itemThreeName.add(null);
                 itemThreePrice.add(null);
+                itemThreeId.add(null);
                 itemThreeImage.add(null);
                 itemThreeName.add(null);
                 itemThreePrice.add(null);
 
                 RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
-                MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
-                        itemTwoImage, itemTwoName, itemTwoPrice,
-                        itemThreeImage, itemThreeName, itemThreePrice,
+                MenuAdapter adapter = new MenuAdapter(itemOneId, itemOneImage, itemOneName, itemOnePrice,
+                        itemTwoId, itemTwoImage, itemTwoName, itemTwoPrice,
+                        itemThreeId, itemThreeImage, itemThreeName, itemThreePrice,
                         getApplicationContext());
                 recycleView.setAdapter(adapter);
                 recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -382,42 +396,49 @@ public class MenuScreen extends AppCompatActivity {
                             drinksItems.getString(0).equals("28") ||
                             drinksItems.getString(0).equals("31")) {
 
+                        itemOneId.add(allItems.getInt(0));
                         addItemImage(drinksItems.getString(0));
                         itemOneName.add(drinksItems.getString(1));
                         itemOnePrice.add(drinksItems.getDouble(3));
                     }else if (drinksItems.getString(0).equals("26") ||
                             drinksItems.getString(0).equals("29")){
 
+                        itemTwoId.add(allItems.getInt(0));
                         addItemImage(drinksItems.getString(0));
                         itemTwoName.add(drinksItems.getString(1));
                         itemTwoPrice.add(drinksItems.getDouble(3));
                     }else if (drinksItems.getString(0).equals("27") ||
                             drinksItems.getString(0).equals("30")){
 
+                        itemThreeId.add(allItems.getInt(0));
                         addItemImage(drinksItems.getString(0));
                         itemThreeName.add(drinksItems.getString(1));
                         itemThreePrice.add(drinksItems.getDouble(3));
                     }
                 }
 
+                itemTwoId.add(null);
                 itemTwoImage.add(null);
                 itemTwoName.add(null);
                 itemTwoPrice.add(null);
+                itemTwoId.add(null);
                 itemTwoImage.add(null);
                 itemTwoName.add(null);
                 itemTwoPrice.add(null);
 
+                itemThreeId.add(null);
                 itemThreeImage.add(null);
                 itemThreeName.add(null);
                 itemThreePrice.add(null);
+                itemThreeId.add(null);
                 itemThreeImage.add(null);
                 itemThreeName.add(null);
                 itemThreePrice.add(null);
 
                 RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
-                MenuAdapter adapter = new MenuAdapter(itemOneImage, itemOneName, itemOnePrice,
-                        itemTwoImage, itemTwoName, itemTwoPrice,
-                        itemThreeImage, itemThreeName, itemThreePrice,
+                MenuAdapter adapter = new MenuAdapter(itemOneId, itemOneImage, itemOneName, itemOnePrice,
+                        itemTwoId, itemTwoImage, itemTwoName, itemTwoPrice,
+                        itemThreeId, itemThreeImage, itemThreeName, itemThreePrice,
                         getApplicationContext());
                 recycleView.setAdapter(adapter);
                 recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

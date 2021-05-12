@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
 
     DatabaseHelper db;
+
+    static int customerId = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         db.insertCustomer(1, "");
 
+                        Cursor currentCustomer = db.findLastCustomer();
+                        currentCustomer.moveToNext();
+
+                        customerId = currentCustomer.getInt(0);
+
                         Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                         startActivity(intent);
                     }
@@ -54,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         db.insertCustomer(0, "");
+
+                        Cursor currentCustomer = db.findLastCustomer();
+                        currentCustomer.moveToNext();
+
+                        customerId = currentCustomer.getInt(0);
 
                         Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                         startActivity(intent);
@@ -74,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 db.insertCustomer(1, "");
 
+                                Cursor currentCustomer = db.findLastCustomer();
+                                currentCustomer.moveToNext();
+
+                                customerId = currentCustomer.getInt(0);
+
                                 Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                                 startActivity(intent);
                             }
@@ -81,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 db.insertCustomer(0, "");
+
+                                Cursor currentCustomer = db.findLastCustomer();
+                                currentCustomer.moveToNext();
+
+                                customerId = currentCustomer.getInt(0);
 
                                 Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                                 startActivity(intent);

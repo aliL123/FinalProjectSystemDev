@@ -211,4 +211,24 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         db.close();
     }
 
+
+
+
+
+    public boolean addToCart(int orderId, int customerId, int item_id, int quantity) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("order_id", orderId);
+        contentValues.put("customer_id", customerId);
+        contentValues.put("item_id", item_id);
+        contentValues.put("quantity", quantity);
+        long result = db.insert(TABLE_CART, null, contentValues);
+
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }
