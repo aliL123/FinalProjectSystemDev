@@ -71,7 +71,7 @@ public class MenuScreen extends AppCompatActivity {
                     allItems.getString(0).equals("25") ||
                     allItems.getString(0).equals("28") ||
                     allItems.getString(0).equals("31")){
-                //Toast.makeText(MenuScreen.this, allItems.getString(0) + allItems.getString(1), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MenuScreen.this, allItems.getString(0) + allItems.getString(1) + allItems.getDouble(3), Toast.LENGTH_SHORT).show();
 
                 itemOneId.add(allItems.getInt(0));
                 addItemImage(allItems.getString(0));
@@ -87,7 +87,7 @@ public class MenuScreen extends AppCompatActivity {
                     allItems.getString(0).equals("23") ||
                     allItems.getString(0).equals("26") ||
                     allItems.getString(0).equals("29")){
-                //Toast.makeText(MenuScreen.this, allItems.getString(0) + allItems.getString(1), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MenuScreen.this, allItems.getString(0) + allItems.getString(1) + allItems.getDouble(3), Toast.LENGTH_SHORT).show();
 
                 itemTwoId.add(allItems.getInt(0));
                 addItemImage(allItems.getString(0));
@@ -103,7 +103,7 @@ public class MenuScreen extends AppCompatActivity {
                     allItems.getString(0).equals("24") ||
                     allItems.getString(0).equals("27") ||
                     allItems.getString(0).equals("30")){
-                //Toast.makeText(MenuScreen.this, allItems.getString(0) + allItems.getString(1), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MenuScreen.this, allItems.getString(0) + allItems.getString(1) + allItems.getDouble(3), Toast.LENGTH_SHORT).show();
 
                 itemThreeId.add(allItems.getInt(0));
                 addItemImage(allItems.getString(0));

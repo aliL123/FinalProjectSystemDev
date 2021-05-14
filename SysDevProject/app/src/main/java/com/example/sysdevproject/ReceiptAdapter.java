@@ -20,12 +20,14 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ViewHold
 
     ArrayList<String> receiptImages = new ArrayList<>();
     ArrayList<String> receiptItemsNames = new ArrayList<>();
-    ArrayList<String> receiptItemsPrices = new ArrayList<>();
+    ArrayList<Integer> receiptItemQuantities = new ArrayList<>();
+    ArrayList<Double> receiptItemsPrices = new ArrayList<>();
     Context mContext;
 
-    public ReceiptAdapter(ArrayList<String> image, ArrayList<String> itemName, ArrayList<String> itemPrice, Context mContext) {
+    public ReceiptAdapter(ArrayList<String> image, ArrayList<String> itemName, ArrayList<Integer> itemQuantity, ArrayList<Double> itemPrice, Context mContext) {
         this.receiptImages = image;
         this.receiptItemsNames = itemName;
+        this.receiptItemQuantities = itemQuantity;
         this.receiptItemsPrices = itemPrice;
 
         this.mContext = mContext;
@@ -44,8 +46,8 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ViewHold
                 .load(receiptImages.get(position))
                 .into(holder.receiptItemImage);
 
-        holder.receiptItemName.setText(receiptItemsNames.get(position));
-        holder.receiptItemPrice.setText(receiptItemsPrices.get(position));
+        holder.receiptItemName.setText(receiptItemQuantities.get(position) + " " + receiptItemsNames.get(position));
+        holder.receiptItemPrice.setText("$"+receiptItemsPrices.get(position));
     }
 
     @Override

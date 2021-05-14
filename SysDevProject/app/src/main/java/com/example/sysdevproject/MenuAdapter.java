@@ -86,7 +86,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>{
         holder.itemTwoPrice.setText("$"+pricesTwo.get(position));
 
         holder.itemThreeName.setText(namesThree.get(position));
-        holder.itemThreePrice.setText("$"+pricesTwo.get(position));
+        holder.itemThreePrice.setText("$"+pricesThree.get(position));
     }
 
     @Override
