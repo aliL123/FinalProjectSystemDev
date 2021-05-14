@@ -237,4 +237,18 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return result;
     }
 
+    public boolean updateCart(String customerId, String itemId, int quantity) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("customer_id", customerId);
+        contentValues.put("item_id", itemId);
+        contentValues.put("quantity", quantity);
+        db.update(TABLE_CART, contentValues, "customer_id = ? AND item_id = ? ",new String[] {customerId, itemId});
+        return true;
+    }
+
+    public Integer deleteCartItem(String customerId, String itemId){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_CART, "customer_id = ? AND item_id = ? ", new String[] {customerId, itemId});
+    }
 }

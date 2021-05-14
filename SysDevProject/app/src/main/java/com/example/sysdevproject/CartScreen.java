@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -56,7 +57,23 @@ public class CartScreen extends AppCompatActivity {
         checkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Cursor updateCart = db.getItemFromCart(MainActivity.customerId);
+
+                int index = 0;
+                while (updateCart.moveToNext()){
+                    db.updateCart(String.valueOf(MainActivity.customerId), updateCart.getString(2), CartAdapter.itemQuantities.get(index));
+
+                    index++;
+                }
                 Intent intent = new Intent(CartScreen.this, PaymentMethodScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CartScreen.this, MainActivity.class);
                 startActivity(intent);
             }
         });

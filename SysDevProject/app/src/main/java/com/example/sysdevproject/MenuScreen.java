@@ -513,9 +513,9 @@ public class MenuScreen extends AppCompatActivity {
         }else if (itemId.equals("24")){
             itemThreeImage.add("https://www.maangchi.com/wp-content/uploads/2019/11/vegankimchi-insta.jpg");
         }else if (itemId.equals("25")){
-            itemOneImage.add("https://www.theflavorbender.com/wp-content/uploads/2018/04/Galbi-Korean-BBQ-Short-Ribs-Feat2.jpg");
+            itemOneImage.add("https://cdn11.bigcommerce.com/s-5bce5hukxg/images/stencil/1280x1280/products/2401/2989/coke355__27172.1580962278.jpg?c=2");
         }else if (itemId.equals("26")){
-            itemTwoImage.add("https://cdn11.bigcommerce.com/s-5bce5hukxg/images/stencil/1280x1280/products/2401/2989/coke355__27172.1580962278.jpg?c=2");
+            itemTwoImage.add("https://cdn11.bigcommerce.com/s-5bce5hukxg/images/stencil/1280x1280/products/3528/2991/cokdiet__80073.1580962366.jpg?c=2");
         }else if (itemId.equals("27")){
             itemThreeImage.add("https://supremepizzaonline.ca/wp-content/uploads/2017/08/7up-Can-update.jpg");
         }else if (itemId.equals("28")){

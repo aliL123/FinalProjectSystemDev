@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageButton
-        android:id="@+id/reduceItemToCartButton"
+        android:id="@+id/incrementItemQuantity"
         android:layout_width="83dp"
         android:layout_height="73dp"
         android:layout_marginTop="126dp"
@@ -29,20 +29,20 @@
         android:hint="Text Item goes here Example"
         android:text=""
         android:textSize="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/addItemToCartButton"
+        app:layout_constraintEnd_toStartOf="@+id/decrementItemQuantity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/addItemToCartButton"
+        android:id="@+id/decrementItemQuantity"
         android:layout_width="83dp"
         android:layout_height="73dp"
         android:layout_marginEnd="21dp"
         android:layout_marginRight="21dp"
-        app:layout_constraintBottom_toBottomOf="@+id/reduceItemToCartButton"
+        app:layout_constraintBottom_toBottomOf="@+id/incrementItemQuantity"
         app:layout_constraintEnd_toStartOf="@+id/itemCartQuantity"
         app:layout_constraintStart_toEndOf="@+id/cartItemName"
-        app:layout_constraintTop_toTopOf="@+id/reduceItemToCartButton" />
+        app:layout_constraintTop_toTopOf="@+id/incrementItemQuantity" />
 
     <TextView
         android:id="@+id/itemCartQuantity"
@@ -53,10 +53,10 @@
         android:gravity="center"
         android:text="TextView"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/reduceItemToCartButton"
-        app:layout_constraintEnd_toStartOf="@+id/reduceItemToCartButton"
-        app:layout_constraintStart_toEndOf="@+id/addItemToCartButton"
-        app:layout_constraintTop_toTopOf="@+id/reduceItemToCartButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/incrementItemQuantity"
+        app:layout_constraintEnd_toStartOf="@+id/incrementItemQuantity"
+        app:layout_constraintStart_toEndOf="@+id/decrementItemQuantity"
+        app:layout_constraintTop_toTopOf="@+id/incrementItemQuantity" />
 
     <Button
         android:id="@+id/deleteCartItemButton"
@@ -69,8 +69,8 @@
         android:text="Delete"
         android:textSize="20dp"
         app:backgroundTint="@color/crimson"
-        app:layout_constraintBottom_toBottomOf="@+id/reduceItemToCartButton"
+        app:layout_constraintBottom_toBottomOf="@+id/incrementItemQuantity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/reduceItemToCartButton"
-        app:layout_constraintTop_toTopOf="@+id/reduceItemToCartButton" />
+        app:layout_constraintStart_toEndOf="@+id/incrementItemQuantity"
+        app:layout_constraintTop_toTopOf="@+id/incrementItemQuantity" />
 </androidx.constraintlayout.widget.ConstraintLayout>
