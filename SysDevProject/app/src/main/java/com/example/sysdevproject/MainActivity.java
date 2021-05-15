@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                         currentCustomer.moveToNext();
 
                         customerId = currentCustomer.getInt(0);
-
+                        setLocal(MainActivity.this, "fr-rCA");
                         Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                         startActivity(intent);
                     }
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                         currentCustomer.moveToNext();
 
                         customerId = currentCustomer.getInt(0);
-
+                        setLocal(MainActivity.this, "fr-rCA");
                         Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                         startActivity(intent);
                     }
@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
                                 currentCustomer.moveToNext();
 
                                 customerId = currentCustomer.getInt(0);
-                                setLocal(MainActivity.this, "fr-CA");
                                 Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                                 startActivity(intent);
                             }

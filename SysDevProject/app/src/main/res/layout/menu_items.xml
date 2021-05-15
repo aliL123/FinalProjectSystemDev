@@ -17,101 +17,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/itemThreeImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="804dp"
-        android:layout_marginLeft="804dp"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/hohologo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/itemTwoImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="484dp"
-        android:layout_marginLeft="484dp"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/hohologo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/itemTwoName"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="404dp"
-        android:layout_marginLeft="404dp"
-        android:layout_marginTop="168dp"
-        android:gravity="center"
-        android:text="Item 2 Name"
-        android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/itemThreeName"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="732dp"
-        android:layout_marginLeft="732dp"
-        android:layout_marginTop="168dp"
-        android:gravity="center"
-        android:text="Item 3 Name"
-        android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/itemOnePrice"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginLeft="96dp"
-        android:layout_marginTop="224dp"
-        android:gravity="center"
+        android:layout_width="700dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="364dp"
+        android:layout_marginLeft="364dp"
+        android:layout_marginTop="84dp"
+        android:gravity="left"
         android:text="Item 1 Price"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/itemTwoPrice"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="436dp"
-        android:layout_marginLeft="436dp"
-        android:layout_marginTop="224dp"
-        android:gravity="center"
-        android:text="Item 2 Price"
-        android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/itemThreePrice"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="764dp"
-        android:layout_marginLeft="764dp"
-        android:layout_marginTop="224dp"
-        android:gravity="center"
-        android:text="Item 3 Price"
-        android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/itemOneName"
-        android:layout_width="300dp"
+        android:layout_width="700dp"
         android:layout_height="50dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="168dp"
-        android:gravity="center"
+        android:layout_marginStart="364dp"
+        android:layout_marginLeft="364dp"
+        android:layout_marginTop="16dp"
+        android:gravity="left"
         android:text="Item 1 Name"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
