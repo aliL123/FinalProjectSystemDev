@@ -66,8 +66,8 @@
 
     <Button
         android:id="@+id/itemAddCartButton"
-        android:layout_width="278dp"
-        android:layout_height="79dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/item_cart"
         android:textSize="25dp"

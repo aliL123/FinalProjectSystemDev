@@ -47,11 +47,6 @@ public class MenuScreen extends AppCompatActivity {
 
         Cursor allItems = db.getAllItems();
 
-
-        String itemColumn1 = "1";
-        String itemColumn2 = "2";
-        String itemColumn3 = "3";
-
         while (allItems.moveToNext()) {
             //Toast.makeText(MenuScreen.this, allItems.getString(0) + allItems.getString(1) + allItems.getDouble(3), Toast.LENGTH_SHORT).show();
 
@@ -86,14 +81,13 @@ public class MenuScreen extends AppCompatActivity {
                     addItemImage(comboItems.getString(0));
                     itemOneName.add(comboItems.getString(1));
                     itemOnePrice.add(comboItems.getDouble(3));
-
-
-                    RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
-                    MenuAdapter adapter = new MenuAdapter(itemOneId, itemOneImage, itemOneName, itemOnePrice,
-                            getApplicationContext());
-                    recycleView.setAdapter(adapter);
-                    recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 }
+
+                RecyclerView recycleView = findViewById(R.id.menuRecyclerView);
+                MenuAdapter adapter = new MenuAdapter(itemOneId, itemOneImage, itemOneName, itemOnePrice,
+                        getApplicationContext());
+                recycleView.setAdapter(adapter);
+                recycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
         });
         twoSet.setOnClickListener(new View.OnClickListener() {
@@ -157,12 +151,7 @@ public class MenuScreen extends AppCompatActivity {
 
                 menuScreenTitle.setText("Bibimbap");
 
-
                 Cursor bibimbapItems = db.getBibimbapItems();
-
-                String bibimbapColumn1 = "12";
-                String bibimbapColumn2 = "13";
-                String bibimbapColumn3 = "14";
 
                 while (bibimbapItems.moveToNext()){
 
@@ -187,7 +176,6 @@ public class MenuScreen extends AppCompatActivity {
                 itemOnePrice.clear();
 
                 menuScreenTitle.setText("Drinks");
-
 
                 Cursor drinksItems = db.getDrinksItems();
 

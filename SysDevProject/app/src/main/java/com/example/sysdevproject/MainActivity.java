@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         Cursor currentCustomer = db.findLastCustomer();
                         currentCustomer.moveToNext();
 
+                        customerId = currentCustomer.getInt(0);
 
                         setLocal(MainActivity.this, "fr");
 

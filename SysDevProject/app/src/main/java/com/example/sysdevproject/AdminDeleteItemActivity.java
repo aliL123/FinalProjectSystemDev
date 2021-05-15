@@ -63,7 +63,7 @@ public class AdminDeleteItemActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                String item = itemList.getItemAtPosition(1).toString();
+                String item = itemList.getItemAtPosition(position).toString();
                 deleteItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

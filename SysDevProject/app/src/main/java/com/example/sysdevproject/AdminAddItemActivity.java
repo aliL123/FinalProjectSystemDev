@@ -2,6 +2,7 @@ package com.example.sysdevproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -47,7 +48,7 @@ public class AdminAddItemActivity extends AppCompatActivity implements AdapterVi
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                startActivity(new Intent(AdminAddItemActivity.this, AdminHomeActivity.class));
             }
         });
         saveBtn.setOnClickListener(new View.OnClickListener() {
