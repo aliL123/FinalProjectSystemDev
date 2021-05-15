@@ -20,4 +20,7 @@
     <string name="receipt_screen_title">" Voici votre reçu, veuillez le transmettre à la caisse pour procéder à la commande"</string>
     <string name="receipt_screen_final_total">Prix Final:</string>
     <string name="receipt_screen_print">imprimez</string>
+    <string name="message_item">Article ajouté au panier</string>
+    <string name="message_item2">"L'article est déjà dans votre panier"</string>
+
 </resources>

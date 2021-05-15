@@ -54,9 +54,9 @@ public class ItemScreen extends AppCompatActivity {
                 boolean addedToCart = db.addToCart(0, MainActivity.customerId, id, 1);
 
                 if (addedToCart){
-                    Toast.makeText(ItemScreen.this, "Item added to cart", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ItemScreen.this, getResources().getString(R.string.message_item), Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(ItemScreen.this, "Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ItemScreen.this, getResources().getString(R.string.message_item2), Toast.LENGTH_SHORT).show();
                 }
 
                 startActivity(new Intent(ItemScreen.this, MenuScreen.class));

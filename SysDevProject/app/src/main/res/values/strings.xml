@@ -22,6 +22,8 @@
     <string name="receipt_screen_sub_total" translatable="false">Sub-total:</string>
     <string name="receipt_screen_final_total">Final Price:</string>
     <string name="receipt_screen_print">Print</string>
+    <string name="message_item">Item added to cart</string>
+    <string name="message_item2">The item is already in your cart</string>
 
     <string-array name="category">
         <item>Combo</item>
