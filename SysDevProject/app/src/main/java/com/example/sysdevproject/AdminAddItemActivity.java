@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -22,6 +23,7 @@ public class AdminAddItemActivity extends AppCompatActivity implements AdapterVi
     Spinner spinner;
     DatabaseHelper mydb;
     String category;
+    ImageButton imageButton;
     RadioGroup radioGroupAble, radioGroupDrink;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +36,20 @@ public class AdminAddItemActivity extends AppCompatActivity implements AdapterVi
         spinner = findViewById(R.id.spinnerCategory);
         radioGroupAble = findViewById(R.id.radioGroup);
         radioGroupDrink = findViewById(R.id.radioGroupDrink);
+        imageButton = findViewById(R.id.goBack);
         mydb = new DatabaseHelper(this);
+
         ArrayAdapter<CharSequence> dataAdapter =  ArrayAdapter.createFromResource(this,
                 R.array.category, android.R.layout.simple_spinner_item);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
         spinner.setOnItemSelectedListener(this);
-
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         saveBtn.setOnClickListener(new View.OnClickListener() {
             //nsertItem(String name, String description, Double price, int is_drink, int available, String category)
             @Override
