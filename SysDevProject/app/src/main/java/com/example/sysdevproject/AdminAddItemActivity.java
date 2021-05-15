@@ -61,7 +61,7 @@ public class AdminAddItemActivity extends AppCompatActivity implements AdapterVi
                 RadioButton radioButtonDrink = findViewById(radioId2);
                 int available = 0;
                 int drink = 0;
-                if(radioButton.getText().equals("YES"))
+                if(radioButton.getText().equals("Yes"))
                     available = 1;
 
                 if (radioButtonDrink.getText().equals("Drink"))

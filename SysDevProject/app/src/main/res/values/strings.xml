@@ -26,10 +26,10 @@
     <string name="message_item2">The item is already in your cart</string>
 
     <string-array name="category">
-        <item>Combo</item>
-        <item>2 Set</item>
-        <item>Bibimap</item>
-        <item>Plate</item>
-        <item>Drinks</item>
+        <item>combo</item>
+        <item>2set</item>
+        <item>bibimap</item>
+        <item>plate</item>
+        <item>drinks</item>
     </string-array>
 </resources>
