@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
                                 currentCustomer.moveToNext();
 
                                 customerId = currentCustomer.getInt(0);
-
                                 Intent intent = new Intent(MainActivity.this, MenuScreen.class);
+
                                 startActivity(intent);
                             }
                         }).setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                                 currentCustomer.moveToNext();
 
                                 customerId = currentCustomer.getInt(0);
-
+                                setLocal(MainActivity.this, "fr-CA");
                                 Intent intent = new Intent(MainActivity.this, MenuScreen.class);
                                 startActivity(intent);
                             }
@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         locale.setDefault(locale);
         Resources resources = activity.getResources();
         Configuration configuration = resources.getConfiguration();
-        //configuration.setLocale(locale);
+        configuration.setLocale(locale);
         resources.updateConfiguration(configuration,resources.getDisplayMetrics());
 
     }

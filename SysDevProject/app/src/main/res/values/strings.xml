@@ -19,7 +19,7 @@
     <string name="item_description">Description:</string>
     <string name="item_cart">Add Cart</string>
     <string name="receipt_screen_title">Here is your receipt, please pass this to the cashier to proceed with the order</string>
-    <string name="receipt_screen_sub_total">Sub-total:</string>
+    <string name="receipt_screen_sub_total" translatable="false">Sub-total:</string>
     <string name="receipt_screen_final_total">Final Price:</string>
     <string name="receipt_screen_print">Print</string>
 
