@@ -46,7 +46,7 @@ public class AdminHomeActivity extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //update availability of an item
+                startActivity(new Intent(AdminHomeActivity.this, AdminUpdateActivity.class));
             }
         });
     }

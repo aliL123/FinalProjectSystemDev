@@ -12,7 +12,8 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.SysDevProject">
-        <activity android:name=".PaymentMethodScreen"></activity>
+        <activity android:name=".AdminUpdateActivity"></activity>
+        <activity android:name=".PaymentMethodScreen" />
         <activity android:name=".ItemScreen" />
         <activity android:name=".AdminAddItemActivity" />
         <activity android:name=".MenuScreen" />
