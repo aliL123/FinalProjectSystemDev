@@ -73,6 +73,12 @@ public class CartScreen extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Cursor cancelCart = db.getItemFromCart(MainActivity.customerId);
+
+                while (cancelCart.moveToNext()){
+                    db.deleteCartItem(String.valueOf(MainActivity.customerId), cancelCart.getString(2));
+                }
+
                 Intent intent = new Intent(CartScreen.this, MainActivity.class);
                 startActivity(intent);
             }

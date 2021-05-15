@@ -67,6 +67,7 @@ public class MenuScreen extends AppCompatActivity {
         combo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                itemOneId.clear();
                 itemOneImage.clear();
                 itemOneName.clear();
                 itemOnePrice.clear();
@@ -93,6 +94,7 @@ public class MenuScreen extends AppCompatActivity {
         twoSet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                itemOneId.clear();
                 itemOneImage.clear();
                 itemOneName.clear();
                 itemOnePrice.clear();
@@ -119,6 +121,7 @@ public class MenuScreen extends AppCompatActivity {
         plate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                itemOneId.clear();
                 itemOneImage.clear();
                 itemOneName.clear();
                 itemOnePrice.clear();
@@ -145,6 +148,7 @@ public class MenuScreen extends AppCompatActivity {
         bibimbap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                itemOneId.clear();
                 itemOneImage.clear();
                 itemOneName.clear();
                 itemOnePrice.clear();
@@ -171,6 +175,7 @@ public class MenuScreen extends AppCompatActivity {
         drinks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                itemOneId.clear();
                 itemOneImage.clear();
                 itemOneName.clear();
                 itemOnePrice.clear();

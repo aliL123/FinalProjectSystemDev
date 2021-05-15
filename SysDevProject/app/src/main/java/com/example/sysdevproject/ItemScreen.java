@@ -24,6 +24,8 @@ public class ItemScreen extends AppCompatActivity {
 
     DatabaseHelper db;
 
+    int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,7 @@ public class ItemScreen extends AppCompatActivity {
         itemDescription = findViewById(R.id.itemDescription);
 
         Intent intent = getIntent();
-        int id = intent.getIntExtra("id", 0);
+        id = intent.getIntExtra("id", 0);
         String image = intent.getStringExtra("image");
         String name = intent.getStringExtra("name");
         double price = intent.getDoubleExtra("price", 0);
