@@ -203,12 +203,15 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return id;
     }
 
-    public void deleteItem(int id)
+    public Integer deleteItem(String id)
     {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        String sql = "DELETE FROM " + TABLE_ITEMS+ " WHERE " + "item_id" + " = " + "'" + id + "'";
+//        db.execSQL(sql);
+//        db.close();
+
         SQLiteDatabase db = this.getWritableDatabase();
-        String sql = "DELETE FROM " + TABLE_ITEMS+ " WHERE " + "item_id" + " = " + "'" + id + "'";
-        db.execSQL(sql);
-        db.close();
+        return db.delete(TABLE_ITEMS, "item_id = ? ", new String[] {id});
     }
 
 
