@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -83,6 +84,13 @@ public class ReceiptScreen extends AppCompatActivity {
         ReceiptAdapter adapter = new ReceiptAdapter(receiptItemImages, receiptItemNames, receiptItemQuantities, receiptItemPrices, this);
         recycleView.setAdapter(adapter);
         recycleView.setLayoutManager(new LinearLayoutManager(this));
+
+        printReceipt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
 
