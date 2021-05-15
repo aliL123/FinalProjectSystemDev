@@ -135,37 +135,37 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     public Cursor getAllItems() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("select * from " + TABLE_ITEMS, null);
+        Cursor result = db.rawQuery("select * from " + TABLE_ITEMS + " WHERE available = " + 1, null);
         return result;
     }
 
     public Cursor getComboItems() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='combo'", null);
+        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='combo' AND available = " + 1, null);
         return result;
     }
 
     public Cursor get2SetItems() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='2set'", null);
+        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='2set' AND available = " + 1, null);
         return result;
     }
 
     public Cursor getPlateItems() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='plate'", null);
+        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='plate' AND available = " + 1, null);
         return result;
     }
 
     public Cursor getBibimbapItems() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='bibimbap'", null);
+        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='bibimbap' AND available = " + 1, null);
         return result;
     }
 
     public Cursor getDrinksItems() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='drinks'", null);
+        Cursor result = db.rawQuery("SELECT * from " + TABLE_ITEMS + " WHERE category ='drinks' AND available = " + 1, null);
         return result;
     }
 
@@ -203,12 +203,24 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return id;
     }
 
-    public void deleteItem(int id)
+    public Integer deleteItem(String id)
     {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        String sql = "DELETE FROM " + TABLE_ITEMS+ " WHERE " + "item_id" + " = " + "'" + id + "'";
+//        db.execSQL(sql);
+//        db.close();
+
         SQLiteDatabase db = this.getWritableDatabase();
-        String sql = "DELETE FROM " + TABLE_ITEMS+ " WHERE " + "item_id" + " = " + "'" + id + "'";
-        db.execSQL(sql);
-        db.close();
+        return db.delete(TABLE_ITEMS, "item_id = ? ", new String[] {id});
+    }
+
+    public boolean updateItem(String id, int availability){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("item_id", id);
+        contentValues.put("available", availability);
+        db.update(TABLE_ITEMS, contentValues, "item_id = ? ",new String[] {id});
+        return true;
     }
 
 

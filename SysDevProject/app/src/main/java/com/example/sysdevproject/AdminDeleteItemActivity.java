@@ -68,7 +68,14 @@ public class AdminDeleteItemActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         int id = mydb.getItemName(item);
-                        mydb.deleteItem(id);
+                        //Toast.makeText(AdminDeleteItemActivity.this, id+"", Toast.LENGTH_SHORT).show();
+                        Integer isDeleted = mydb.deleteItem(String.valueOf(id));
+
+                        if (isDeleted > 0){
+                            Toast.makeText(AdminDeleteItemActivity.this, "Item removed from the menu", Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(AdminDeleteItemActivity.this, "Item not removed", Toast.LENGTH_LONG).show();
+                        }
 
                     }
                 });
