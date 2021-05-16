@@ -424,6 +424,8 @@ public class ReceiptScreen extends AppCompatActivity {
             receiptItemImages.add("https://www.lcbo.com/content/dam/lcbo/products/546564.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg");
         }else if (itemId.equals("31")){
             receiptItemImages.add("https://www.mybottleshop.com/media/catalog/product/cache/37a945ae749548a321239175b147c2a7/t/s/tsingtao_beer_bottles_12_pack_640ml.jpg");
+        }else{
+            receiptItemImages.add("https://image.shutterstock.com/image-vector/spoon-fork-icon-symbol-vector-260nw-1673884297.jpg");
         }
     }
 }
