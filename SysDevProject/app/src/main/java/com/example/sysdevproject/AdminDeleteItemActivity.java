@@ -73,6 +73,9 @@ public class AdminDeleteItemActivity extends AppCompatActivity {
 
                         if (isDeleted > 0){
                             Toast.makeText(AdminDeleteItemActivity.this, "Item removed from the menu", Toast.LENGTH_LONG).show();
+
+                            Intent intent = new Intent(AdminDeleteItemActivity.this, AdminHomeActivity.class);
+                            startActivity(intent);
                         }else{
                             Toast.makeText(AdminDeleteItemActivity.this, "Item not removed", Toast.LENGTH_LONG).show();
                         }

@@ -64,6 +64,9 @@ public class AdminUpdateActivity extends AppCompatActivity {
 
                             if (isUpdated == true){
                                 Toast.makeText(AdminUpdateActivity.this, "Item Updated", Toast.LENGTH_LONG).show();
+
+                                Intent intent = new Intent(AdminUpdateActivity.this, AdminHomeActivity.class);
+                                startActivity(intent);
                             }else{
                                 Toast.makeText(AdminUpdateActivity.this, "Item not Updated", Toast.LENGTH_LONG).show();
                             }
@@ -72,6 +75,9 @@ public class AdminUpdateActivity extends AppCompatActivity {
 
                             if (isUpdated == true){
                                 Toast.makeText(AdminUpdateActivity.this, "Item Updated", Toast.LENGTH_LONG).show();
+
+                                Intent intent = new Intent(AdminUpdateActivity.this, AdminHomeActivity.class);
+                                startActivity(intent);
                             }else{
                                 Toast.makeText(AdminUpdateActivity.this, "Item not Updated", Toast.LENGTH_LONG).show();
                             }

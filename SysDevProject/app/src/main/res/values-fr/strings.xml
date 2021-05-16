@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SysDevProject</string>
+    <string name="app_name">HoHoBBQCoreen</string>
     <string name="combo_title">Combo</string>
     <string name="twos_set_title">2 Set</string>
     <string name="cancel">Annulez</string>
     <string name="checkout">"vérifiez "</string>
-    <string name="plate_title">Plaque</string>
+    <string name="plate_title">Plat</string>
     <string name="drink_title">Boissons</string>
     <string name="cart_title">Voici une liste de vos articles, vous pouvez ajuster leur quantité comme ainsi que supprimer un article spécifique d\'annuler complètement votre commande.</string>
     <string name="menu_title">Menu</string>
     <string name="payment_Screen_Header">" Choisissez une méthode de paiement"</string>
     <string name="payment_Screen_Card">Carte</string>
-    <string name="payment_Screen_Cash">Aregent</string>
+    <string name="payment_Screen_Cash">Argent</string>
     <string name="cancel_order">Annulez la commande</string>
     <string name="cart_screen_checkout">"Finalisez la commande et payer "</string>
     <string name="item_price">Prix</string>

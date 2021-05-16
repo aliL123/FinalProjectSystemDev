@@ -71,6 +71,9 @@ public class AdminAddItemActivity extends AppCompatActivity implements AdapterVi
                         Double.parseDouble(editTextPrice.getText().toString()), drink, available, category);
                 if(isAdded) {
                     Toast.makeText(AdminAddItemActivity.this, "Data inserted", Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(AdminAddItemActivity.this, AdminHomeActivity.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(AdminAddItemActivity.this, "Data not inserted", Toast.LENGTH_LONG).show();
