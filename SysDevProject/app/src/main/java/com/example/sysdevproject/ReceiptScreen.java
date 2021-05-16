@@ -4,14 +4,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.EventLog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Set;
+import java.util.UUID;
 
 import static java.lang.StrictMath.round;
 
@@ -23,6 +38,15 @@ public class ReceiptScreen extends AppCompatActivity {
 
     TextView subTotal, gst, qst, finalPrice;
 
+    OutputStream mOutputStream;
+    BluetoothAdapter mBluetoothAdapter;
+    BluetoothDevice mDevice;
+    BluetoothSocket mSocket;
+    InputStream mInputStream;
+    Boolean stopWorker;
+    int readBufferPosition;
+    byte[] readBuffer;
+    Thread workerThread;
     ArrayList<String> receiptItemImages = new ArrayList<>();
     ArrayList<String> receiptItemNames= new ArrayList<>();
     ArrayList<Integer> receiptItemQuantities = new ArrayList<>();
@@ -88,9 +112,252 @@ public class ReceiptScreen extends AppCompatActivity {
         printReceipt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
+                    findBT();
+                    openBT();
 
+                    for (int i = 0; i < receiptItemNames.size(); i++)
+                    {
+                        printTickets(receiptItemNames.get(i), receiptItemQuantities.get(i), receiptItemPrices.get(i));
+                    }
+
+                    closeBT();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
+    }
+
+    // this will find a bluetooth printer device
+    void findBT() {
+
+        try {
+            mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+            if(mBluetoothAdapter == null) {
+                Toast.makeText(ReceiptScreen.this, "No bluetooth adapter available", Toast.LENGTH_SHORT).show();
+            }
+
+            if(!mBluetoothAdapter.isEnabled()) {
+                Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBluetooth, 0);
+            }
+
+            Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+
+            if(pairedDevices.size() > 0) {
+                for (BluetoothDevice device : pairedDevices) {
+
+                    // RPP300 is the name of the bluetooth printer device
+                    // we got this name from the list of paired devices
+                    if (device.getName().equals("XT4131A")) {
+                        mDevice = device;
+                        break;
+                    }
+                }
+            }
+
+            Toast.makeText(ReceiptScreen.this, "Bluetooth device found.", Toast.LENGTH_SHORT).show();
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    // tries to open a connection to the bluetooth printer device
+    void openBT() throws IOException {
+        try {
+
+            // Standard SerialPortService ID
+            UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+            mSocket = mDevice.createRfcommSocketToServiceRecord(uuid);
+            mSocket.connect();
+            mOutputStream = mSocket.getOutputStream();
+            mInputStream = mSocket.getInputStream();
+
+            beginListenForData();
+
+            Toast.makeText(ReceiptScreen.this, "Bluetooth Connection Opened", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*
+     * after opening a connection to bluetooth printer device,
+     * we have to listen and check if a data were sent to be printed.
+     */
+    void beginListenForData() {
+        try {
+            final Handler handler = new Handler();
+
+            // this is the ASCII code for a newline character
+            final byte delimiter = 10;
+
+            stopWorker = false;
+            readBufferPosition = 0;
+            readBuffer = new byte[1024];
+
+            workerThread = new Thread(new Runnable() {
+                public void run() {
+
+                    while (!Thread.currentThread().isInterrupted() && !stopWorker) {
+
+                        try {
+
+                            int bytesAvailable = mInputStream.available();
+
+                            if (bytesAvailable > 0) {
+
+                                byte[] packetBytes = new byte[bytesAvailable];
+                                mInputStream.read(packetBytes);
+
+                                for (int i = 0; i < bytesAvailable; i++) {
+
+                                    byte b = packetBytes[i];
+                                    if (b == delimiter) {
+
+                                        byte[] encodedBytes = new byte[readBufferPosition];
+                                        System.arraycopy(
+                                                readBuffer, 0,
+                                                encodedBytes, 0,
+                                                encodedBytes.length
+                                        );
+
+                                        // specify US-ASCII encoding
+                                        final String data = new String(encodedBytes, "US-ASCII");
+                                        readBufferPosition = 0;
+
+                                        // tell the user data were sent to bluetooth printer device
+                                        handler.post(new Runnable() {
+                                            public void run() {
+                                                Toast.makeText(ReceiptScreen.this, data, Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+
+                                    } else {
+                                        readBuffer[readBufferPosition++] = b;
+                                    }
+                                }
+                            }
+
+                        } catch (IOException ex) {
+                            stopWorker = true;
+                        }
+
+                    }
+                }
+            });
+
+            workerThread.start();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // this will send text data to be printed by the bluetooth printer
+    void printTickets(String itemName, int itemQuantity, double itemPrice) throws IOException {
+        try {
+            byte[] arrayOfByte1 = { 27, 33, 0 };
+            byte[] format = { 27, 33, 0 };
+            // Bold
+            format[2] = ((byte)(0x8 | arrayOfByte1[2]));
+            // Height
+            format[2] = ((byte)(0x10 | arrayOfByte1[2]));
+            // Width
+            format[2] = ((byte) (0x20 | arrayOfByte1[2]));
+            byte[] center = new byte[]{ 0x1b, 0x61, 0x01 };
+            // the text typed by the user
+            StringBuilder msg = new StringBuilder();
+            msg.append("\n");
+            msg.append("\n");
+            msg.append("\n HoHo Korean BBQ Restaurant");
+            mOutputStream.write(center);
+            mOutputStream.write(format);
+            mOutputStream.write(msg.toString().getBytes());
+
+            // Bold
+            format[2] = ((byte)(0x8 | arrayOfByte1[2]));
+            msg = new StringBuilder();
+            msg.append("\n Address: 6521 Somerled Ave, Montreal, Quebec H4V 1S7");
+            msg.append("\n Tel.: (514) 488-2580");
+            msg.append("\n");
+            msg.append("\n");
+            msg.append("\n");
+            mOutputStream.write(center);
+            mOutputStream.write(format);
+            mOutputStream.write(msg.toString().getBytes());
+
+            // Bold
+            format[2] = ((byte)(0x8 | arrayOfByte1[2]));
+            byte[] left = new byte[]{ 0x1b, 0x61, 0x00 };
+            msg = new StringBuilder();
+            msg.append("\n Event");
+            mOutputStream.write(format);
+            mOutputStream.write(left);
+            mOutputStream.write(msg.toString().getBytes());
+
+            mOutputStream.write(arrayOfByte1);
+
+            left = new byte[]{ 0x1b, 0x61, 0x00 };
+            msg = new StringBuilder();
+            msg.append("\n  Item Name  : " + itemName);
+            msg.append("\n  Quantity  : " + itemQuantity);
+            msg.append("\n  Price  : " + itemPrice);
+            msg.append("\n");
+            msg.append("\n");
+            mOutputStream.write(arrayOfByte1);
+            mOutputStream.write(left);
+            mOutputStream.write(msg.toString().getBytes());
+
+            // Bold
+            format[2] = ((byte)(0x8 | arrayOfByte1[2]));
+            msg = new StringBuilder();
+            msg.append("\n Ticket");
+            mOutputStream.write(format);
+            mOutputStream.write(left);
+            mOutputStream.write(msg.toString().getBytes());
+
+            mOutputStream.write(arrayOfByte1);
+
+            left = new byte[]{ 0x1b, 0x61, 0x00 };
+            msg = new StringBuilder();
+            msg.append("\n  Code              : " + "to.getCode()");
+            msg.append("\n  Class             : " + "to.getTclass()");
+            msg.append("\n  Fee               : " + "to.getPrice()");
+
+//            msg.append("\n  Code              : " + to.getCode());
+//            msg.append("\n  Class             : " + to.getTclass() );
+//            msg.append("\n  Fee               : " + to.getPrice());
+            msg.append("\n  Seat              : " + "N / A");
+            msg.append("\n  Date of Purchase  : " + Calendar.getInstance().getTime().toString());
+            msg.append("\n");
+            msg.append("\n");
+            msg.append("\n");
+            msg.append("\n");
+            msg.append("\n");
+            mOutputStream.write(arrayOfByte1);
+            mOutputStream.write(left);
+            mOutputStream.write(msg.toString().getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // close the connection to bluetooth printer.
+    void closeBT() throws IOException {
+        try {
+            stopWorker = true;
+            mOutputStream.close();
+            mInputStream.close();
+            mSocket.close();
+            // myLabel.setText("Bluetooth Closed");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
