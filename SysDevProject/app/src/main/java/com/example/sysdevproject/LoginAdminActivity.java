@@ -40,7 +40,7 @@ public class LoginAdminActivity extends AppCompatActivity  {
                 String user = username.getText().toString().trim();
                 String pass = password.getText().toString().trim();
 
-                if(user.equals("admin") && pass.equals("greenTeam123")){
+                if (user.equals("admin") && pass.equals("greenTeam123")){
                     startActivity(new Intent(LoginAdminActivity.this, AdminHomeActivity.class));
                 }
 

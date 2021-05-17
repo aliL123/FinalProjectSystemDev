@@ -17,7 +17,7 @@ public class ItemScreen extends AppCompatActivity {
 
     ImageView itemImage;
 
-    TextView itemPrice, itemDescription;
+    TextView textViewItemTitle, itemPrice, itemDescription;
 
     Button addCart;
     ImageButton backToCart;
@@ -33,6 +33,7 @@ public class ItemScreen extends AppCompatActivity {
 
         db = new DatabaseHelper(this);
 
+        textViewItemTitle = findViewById(R.id.textViewItemTitle);
         itemImage = findViewById(R.id.itemImage);
         itemPrice = findViewById(R.id.itemPrice);
         itemDescription = findViewById(R.id.itemDescription);
@@ -48,6 +49,7 @@ public class ItemScreen extends AppCompatActivity {
                 .into(itemImage);
 
         itemPrice.setText("$"+price);
+        textViewItemTitle.setText(name);
 
         addCart = findViewById(R.id.itemAddCartButton);
         addCart.setOnClickListener(new View.OnClickListener() {
